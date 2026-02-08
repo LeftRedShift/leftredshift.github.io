@@ -1,0 +1,295 @@
+ferramenta_cli
+==============
+
+.. py:module:: ferramenta_cli
+
+.. autoapi-nested-parse::
+
+   SBRC26 Testbed de Ataques — versão CLI
+   ATENÇÃO: ESTA VERSÃO, APESAR DE FUNCIONAL NAS FUNÇÕES BÁSICAS, ESTÁ DEFINITIVAMENTE ATRÁS EM COMPARAÇÃO A VERSÃO EM STREAMLIT. O PORT DA VERSÃO WEB PARA A VERSÃO CLI NÃO É TRIVIAL E SERÁ IMPLEMENTADO AO LONGO DO TEMPO.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ferramenta_cli.CAPTURES_DIR
+   ferramenta_cli.DATASETS_DIR
+   ferramenta_cli.SERVER_SPECS
+   ferramenta_cli.SERVER_KEY_TO_IMAGE
+   ferramenta_cli.SERVER_RUN_CMDS
+   ferramenta_cli.SERVER_LOG_SPECS
+   ferramenta_cli.CLIENT_NAME_RE
+   ferramenta_cli.CLIENT_IMAGE
+   ferramenta_cli.CLIENT_NAME_PREFIX
+   ferramenta_cli.CLIENT_MAX_RUNNING
+   ferramenta_cli.BENIGN_CLIENT_SERVER_ORDER
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   ferramenta_cli.stem_no_ext
+   ferramenta_cli.build_capture_path
+   ferramenta_cli.build_dataset_path_for_capture
+   ferramenta_cli.format_bytes
+   ferramenta_cli.get_host_ip
+   ferramenta_cli.mitre_label_from_url
+   ferramenta_cli.normalize_mitre
+   ferramenta_cli.normalize_tools
+   ferramenta_cli.start_tcpdump_capture
+   ferramenta_cli.stop_tcpdump_capture
+   ferramenta_cli.get_servers_status_rows
+   ferramenta_cli.servers_stop_all
+   ferramenta_cli.servers_start_all
+   ferramenta_cli.get_server_image_from_key
+   ferramenta_cli.fetch_server_logs
+   ferramenta_cli.list_running_benign_clients
+   ferramenta_cli.get_running_container_id_by_ancestor
+   ferramenta_cli.get_container_ip_by_id
+   ferramenta_cli.get_required_server_ips
+   ferramenta_cli.next_benign_client_number
+   ferramenta_cli.remove_all_benign_clients
+   ferramenta_cli.start_one_benign_client
+   ferramenta_cli.all_attacks
+   ferramenta_cli.attack_by_id
+   ferramenta_cli.validate_ip
+   ferramenta_cli.validate_port
+   ferramenta_cli.validate_cidr
+   ferramenta_cli.resolve_placeholder
+   ferramenta_cli.validate_params
+   ferramenta_cli.prompt_params_interactive
+   ferramenta_cli.parse_kv_list
+   ferramenta_cli.coerce_params_types
+   ferramenta_cli.run_attack
+   ferramenta_cli.print_attack_details
+   ferramenta_cli.attack_status
+   ferramenta_cli.attack_stop
+   ferramenta_cli.attack_show_logs
+   ferramenta_cli.list_capture_files
+   ferramenta_cli.captures_list
+   ferramenta_cli.captures_info
+   ferramenta_cli.captures_export
+   ferramenta_cli.captures_extract_features
+   ferramenta_cli.captures_view_features
+   ferramenta_cli.captures_build_dataset
+   ferramenta_cli.captures_view_dataset
+   ferramenta_cli.cmd_attack_list
+   ferramenta_cli.cmd_attack_info
+   ferramenta_cli.cmd_attack_status
+   ferramenta_cli.cmd_attack_stop
+   ferramenta_cli.cmd_attack_logs
+   ferramenta_cli.cmd_attack_run
+   ferramenta_cli.cmd_servers_status
+   ferramenta_cli.cmd_servers_start
+   ferramenta_cli.cmd_servers_stop
+   ferramenta_cli.cmd_servers_restart
+   ferramenta_cli.cmd_servers_logs
+   ferramenta_cli.cmd_clients_list
+   ferramenta_cli.cmd_clients_start
+   ferramenta_cli.cmd_clients_stop_all
+   ferramenta_cli.cmd_captures_list
+   ferramenta_cli.cmd_captures_info
+   ferramenta_cli.cmd_captures_export
+   ferramenta_cli.cmd_captures_features
+   ferramenta_cli.cmd_captures_view_features
+   ferramenta_cli.cmd_captures_dataset
+   ferramenta_cli.cmd_captures_view_dataset
+   ferramenta_cli.interactive_main
+   ferramenta_cli.interactive_attacks
+   ferramenta_cli.interactive_servers
+   ferramenta_cli.interactive_clients
+   ferramenta_cli.interactive_captures
+   ferramenta_cli.build_parser
+   ferramenta_cli.main
+
+
+Module Contents
+---------------
+
+.. py:data:: CAPTURES_DIR
+
+.. py:data:: DATASETS_DIR
+
+.. py:function:: stem_no_ext(p: pathlib.Path) -> str
+
+.. py:function:: build_capture_path(attack_id: str) -> pathlib.Path
+
+.. py:function:: build_dataset_path_for_capture(pcap_path: pathlib.Path) -> pathlib.Path
+
+.. py:function:: format_bytes(n: int) -> str
+
+.. py:function:: get_host_ip() -> str
+
+.. py:function:: mitre_label_from_url(url: str) -> str
+
+.. py:function:: normalize_mitre(mitre: Optional[Any]) -> List[str]
+
+.. py:function:: normalize_tools(tools: Optional[List[Dict[str, str]]]) -> List[Dict[str, str]]
+
+.. py:function:: start_tcpdump_capture(pcap_path: pathlib.Path, iface: str = 'docker0') -> Dict[str, Any]
+
+.. py:function:: stop_tcpdump_capture(p: subprocess.Popen, timeout: float = 3.0) -> Dict[str, Any]
+
+.. py:data:: SERVER_SPECS
+   :type:  List[Tuple[str, str]]
+   :value: [('Web Server', 'sbrc26-servidor-http-server'), ('SSH Server', 'sbrc26-servidor-ssh-server'),...
+
+
+.. py:data:: SERVER_KEY_TO_IMAGE
+
+.. py:data:: SERVER_RUN_CMDS
+   :type:  Dict[str, List[str]]
+
+.. py:data:: SERVER_LOG_SPECS
+   :type:  Dict[str, Dict[str, Any]]
+
+.. py:function:: get_servers_status_rows() -> List[Dict[str, Any]]
+
+.. py:function:: servers_stop_all() -> None
+
+.. py:function:: servers_start_all() -> None
+
+.. py:function:: get_server_image_from_key(key_or_image: str) -> str
+
+.. py:function:: fetch_server_logs(image_base: str, tail_lines: int = 200, prefer_alt: bool = False) -> Dict[str, Any]
+
+.. py:data:: CLIENT_NAME_RE
+
+.. py:data:: CLIENT_IMAGE
+   :value: 'sbrc26-clientes:latest'
+
+
+.. py:data:: CLIENT_NAME_PREFIX
+   :value: 'sbrc26-cliente-'
+
+
+.. py:data:: CLIENT_MAX_RUNNING
+   :value: 10
+
+
+.. py:data:: BENIGN_CLIENT_SERVER_ORDER
+   :type:  List[Tuple[str, str]]
+   :value: [('WEB', 'sbrc26-servidor-http-server'), ('SSH', 'sbrc26-servidor-ssh-server'), ('SMB',...
+
+
+.. py:function:: list_running_benign_clients() -> List[Tuple[str, int]]
+
+.. py:function:: get_running_container_id_by_ancestor(image_base: str) -> Optional[str]
+
+.. py:function:: get_container_ip_by_id(cid: str) -> Optional[str]
+
+.. py:function:: get_required_server_ips() -> Tuple[Optional[List[str]], List[str]]
+
+.. py:function:: next_benign_client_number(running_clients: List[Tuple[str, int]]) -> int
+
+.. py:function:: remove_all_benign_clients() -> None
+
+.. py:function:: start_one_benign_client() -> None
+
+.. py:function:: all_attacks() -> List[modules.registry.AttackSpec]
+
+.. py:function:: attack_by_id(attack_id: str) -> modules.registry.AttackSpec
+
+.. py:function:: validate_ip(value: str) -> bool
+
+.. py:function:: validate_port(value: int) -> bool
+
+.. py:function:: validate_cidr(value: str) -> bool
+
+.. py:function:: resolve_placeholder(p: modules.registry.ParamSpec, host_ip: str) -> str
+
+.. py:function:: validate_params(spec: modules.registry.AttackSpec, params: Dict[str, Any]) -> List[str]
+
+.. py:function:: prompt_params_interactive(spec: modules.registry.AttackSpec) -> Dict[str, Any]
+
+.. py:function:: parse_kv_list(pairs: Optional[List[str]]) -> Dict[str, str]
+
+.. py:function:: coerce_params_types(spec: modules.registry.AttackSpec, params: Dict[str, Any]) -> Dict[str, Any]
+
+.. py:function:: run_attack(spec: modules.registry.AttackSpec, resolved_params: Dict[str, Any], *, capture_enabled: bool = True, iface: str = 'docker0', wait: bool = True, capture_seconds: Optional[int] = None) -> Dict[str, Any]
+
+.. py:function:: print_attack_details(spec: modules.registry.AttackSpec) -> None
+
+.. py:function:: attack_status(spec: modules.registry.AttackSpec) -> None
+
+.. py:function:: attack_stop(spec: modules.registry.AttackSpec) -> None
+
+.. py:function:: attack_show_logs(spec: modules.registry.AttackSpec, tail: int = 200) -> None
+
+.. py:function:: list_capture_files() -> List[pathlib.Path]
+
+.. py:function:: captures_list(filter_substr: str = '') -> None
+
+.. py:function:: captures_info(pcap: pathlib.Path) -> None
+
+.. py:function:: captures_export(pcap: pathlib.Path, dest: pathlib.Path) -> None
+
+.. py:function:: captures_extract_features(pcap: pathlib.Path, *, run_ntl: bool, run_tshark: bool, run_scapy: bool, overwrite: bool) -> None
+
+.. py:function:: captures_view_features(pcap: pathlib.Path, tool: str, rows: int) -> None
+
+.. py:function:: captures_build_dataset(pcap: pathlib.Path) -> None
+
+.. py:function:: captures_view_dataset(pcap: pathlib.Path, rows: int, cols: int, search: str) -> None
+
+.. py:function:: cmd_attack_list(_args: argparse.Namespace) -> None
+
+.. py:function:: cmd_attack_info(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_attack_status(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_attack_stop(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_attack_logs(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_attack_run(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_servers_status(_args: argparse.Namespace) -> None
+
+.. py:function:: cmd_servers_start(_args: argparse.Namespace) -> None
+
+.. py:function:: cmd_servers_stop(_args: argparse.Namespace) -> None
+
+.. py:function:: cmd_servers_restart(_args: argparse.Namespace) -> None
+
+.. py:function:: cmd_servers_logs(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_clients_list(_args: argparse.Namespace) -> None
+
+.. py:function:: cmd_clients_start(_args: argparse.Namespace) -> None
+
+.. py:function:: cmd_clients_stop_all(_args: argparse.Namespace) -> None
+
+.. py:function:: cmd_captures_list(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_captures_info(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_captures_export(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_captures_features(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_captures_view_features(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_captures_dataset(args: argparse.Namespace) -> None
+
+.. py:function:: cmd_captures_view_dataset(args: argparse.Namespace) -> None
+
+.. py:function:: interactive_main() -> None
+
+.. py:function:: interactive_attacks() -> None
+
+.. py:function:: interactive_servers() -> None
+
+.. py:function:: interactive_clients() -> None
+
+.. py:function:: interactive_captures() -> None
+
+.. py:function:: build_parser() -> argparse.ArgumentParser
+
+.. py:function:: main(argv: Optional[List[str]] = None) -> None
+

@@ -1,0 +1,1568 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html"><link rel="search" title="Search" href="../../../search.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>NTLFlowLyzer.features.flag_related - Project name not set documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Project name not set  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <span class="sidebar-brand-text">Project name not set  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/sf/index.html">sf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/lfi/index.html">lfi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/setup/index.html">setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/server/index.html">server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/client/index.html">client</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/modules/index.html">modules</a><input aria-label="Toggle navigation of modules" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/modules/datasets/index.html">modules.datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/modules/features/index.html">modules.features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/modules/registry/index.html">modules.registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/modules/runners/index.html">modules.runners</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/ssltest/index.html">ssltest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/ferramenta/index.html">ferramenta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/coap-client/index.html">coap-client</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/NTLFlowLyzer/index.html">NTLFlowLyzer</a><input aria-label="Toggle navigation of NTLFlowLyzer" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/NTLFlowLyzer/config_loader/index.html">NTLFlowLyzer.config_loader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/NTLFlowLyzer/feature_extractor/index.html">NTLFlowLyzer.feature_extractor</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/index.html">NTLFlowLyzer.features</a><input aria-label="Toggle navigation of NTLFlowLyzer.features" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/IAT_related/index.html">NTLFlowLyzer.features.IAT_related</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/bulk_related/index.html">NTLFlowLyzer.features.bulk_related</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/count_related/index.html">NTLFlowLyzer.features.count_related</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/feature/index.html">NTLFlowLyzer.features.feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/flag_related/index.html">NTLFlowLyzer.features.flag_related</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/len_related/index.html">NTLFlowLyzer.features.len_related</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/rate_related/index.html">NTLFlowLyzer.features.rate_related</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/subflow_related/index.html">NTLFlowLyzer.features.subflow_related</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/time_related/index.html">NTLFlowLyzer.features.time_related</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/features/utils/index.html">NTLFlowLyzer.features.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/NTLFlowLyzer/network_flow_analyzer/index.html">NTLFlowLyzer.network_flow_analyzer</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/NTLFlowLyzer/network_flow_capturer/index.html">NTLFlowLyzer.network_flow_capturer</a><input aria-label="Toggle navigation of NTLFlowLyzer.network_flow_capturer" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/network_flow_capturer/flow/index.html">NTLFlowLyzer.network_flow_capturer.flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/network_flow_capturer/network_flow_capturer/index.html">NTLFlowLyzer.network_flow_capturer.network_flow_capturer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/network_flow_capturer/packet/index.html">NTLFlowLyzer.network_flow_capturer.packet</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/NTLFlowLyzer/writers/index.html">NTLFlowLyzer.writers</a><input aria-label="Toggle navigation of NTLFlowLyzer.writers" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/writers/csv_writer/index.html">NTLFlowLyzer.writers.csv_writer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/writers/strategy/index.html">NTLFlowLyzer.writers.strategy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/NTLFlowLyzer/writers/writer/index.html">NTLFlowLyzer.writers.writer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/super-client/index.html">super-client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/ferramenta_cli/index.html">ferramenta_cli</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <h1>Source code for NTLFlowLyzer.features.flag_related</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..network_flow_capturer</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flow</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.feature</span><span class="w"> </span><span class="kn">import</span> <span class="n">Feature</span>
+
+
+<div class="viewcode-block" id="FINFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FINFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FINFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FINFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FINFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fin_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FINFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FINFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagFIN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PSHFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.PSHFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PSHFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="PSHFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.PSHFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;psh_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="PSHFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.PSHFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagPSH</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="URGFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.URGFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">URGFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="URGFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.URGFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;urg_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="URGFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.URGFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagURG</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ECEFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ECEFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ECEFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="ECEFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ECEFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ece_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="ECEFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ECEFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagECE</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SYNFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.SYNFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SYNFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="SYNFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.SYNFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;syn_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="SYNFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.SYNFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagSYN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ACKFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ACKFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ACKFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="ACKFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ACKFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ack_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="ACKFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ACKFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagACK</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="CWRFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.CWRFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CWRFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="CWRFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.CWRFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cwr_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="CWRFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.CWRFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagCWR</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RSTFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.RSTFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RSTFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="RSTFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.RSTFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rst_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="RSTFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.RSTFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagRST</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdFINFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdFINFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdFINFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_fin_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FwdFINFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagFIN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdPSHFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdPSHFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdPSHFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_psh_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FwdPSHFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagPSH</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdURGFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdURGFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdURGFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_urg_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FwdURGFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagURG</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdECEFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdECEFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdECEFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_ece_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FwdECEFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagECE</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdSYNFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdSYNFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdSYNFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_syn_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FwdSYNFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagSYN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdACKFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdACKFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdACKFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_ack_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FwdACKFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagACK</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdCWRFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdCWRFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdCWRFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_cwr_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FwdCWRFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagCWR</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdRSTFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdRSTFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdRSTFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_rst_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="FwdRSTFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagRST</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdFINFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdFINFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdFINFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_fin_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="BwdFINFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagFIN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdPSHFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdPSHFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdPSHFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_psh_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="BwdPSHFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagPSH</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdURGFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdURGFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdURGFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_urg_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="BwdURGFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagURG</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdECEFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdECEFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdECEFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_ece_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="BwdECEFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagECE</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdSYNFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdSYNFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdSYNFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_syn_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="BwdSYNFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagSYN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdACKFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdACKFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdACKFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_ack_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="BwdACKFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagACK</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdCWRFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdCWRFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdCWRFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_cwr_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="BwdCWRFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagCWR</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdRSTFlagCounts">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagCounts">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdRSTFlagCounts</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdRSTFlagCounts.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagCounts.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_rst_flag_counts&quot;</span></div>
+
+<div class="viewcode-block" id="BwdRSTFlagCounts.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagCounts.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagRST</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FINFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FINFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FINFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FINFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FINFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fin_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FINFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FINFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagFIN</span><span class="p">():</span>
+                <span class="n">counts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PSHFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.PSHFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PSHFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="PSHFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.PSHFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;psh_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="PSHFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.PSHFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagPSH</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="URGFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.URGFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">URGFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="URGFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.URGFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;urg_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="URGFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.URGFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagURG</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ECEFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ECEFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ECEFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="ECEFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ECEFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ece_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="ECEFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ECEFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagECE</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SYNFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.SYNFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SYNFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="SYNFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.SYNFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;syn_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="SYNFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.SYNFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagSYN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ACKFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ACKFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ACKFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="ACKFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ACKFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ack_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="ACKFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.ACKFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagACK</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="CWRFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.CWRFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CWRFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="CWRFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.CWRFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cwr_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="CWRFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.CWRFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagCWR</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RSTFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.RSTFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RSTFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="RSTFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.RSTFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rst_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="RSTFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.RSTFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagRST</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdFINFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdFINFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdFINFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_fin_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FwdFINFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagFIN</span><span class="p">():</span>
+                <span class="n">counts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdPSHFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdPSHFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdPSHFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_psh_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FwdPSHFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagPSH</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdURGFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdURGFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdURGFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_urg_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FwdURGFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagURG</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdECEFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdECEFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdECEFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_ece_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FwdECEFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagECE</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdSYNFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdSYNFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdSYNFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_syn_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FwdSYNFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagSYN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdACKFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdACKFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdACKFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_ack_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FwdACKFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagACK</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdCWRFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdCWRFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdCWRFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_cwr_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FwdCWRFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagCWR</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdRSTFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdRSTFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdRSTFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_rst_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="FwdRSTFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagRST</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdFINFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdFINFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdFINFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_fin_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="BwdFINFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagFIN</span><span class="p">():</span>
+                <span class="n">counts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdPSHFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdPSHFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdPSHFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_psh_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="BwdPSHFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagPSH</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdURGFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdURGFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdURGFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_urg_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="BwdURGFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagURG</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdECEFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdECEFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdECEFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_ece_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="BwdECEFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagECE</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdSYNFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdSYNFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdSYNFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_syn_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="BwdSYNFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagSYN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdACKFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdACKFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdACKFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_ack_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="BwdACKFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagACK</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdCWRFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdCWRFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdCWRFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_cwr_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="BwdCWRFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagCWR</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdRSTFlagPercentageInTotal">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagPercentageInTotal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdRSTFlagPercentageInTotal</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdRSTFlagPercentageInTotal.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagPercentageInTotal.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_rst_flag_percentage_in_total&quot;</span></div>
+
+<div class="viewcode-block" id="BwdRSTFlagPercentageInTotal.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagPercentageInTotal.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagRST</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_packets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdFINFlagPercentageInFwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagPercentageInFwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdFINFlagPercentageInFwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdFINFlagPercentageInFwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagPercentageInFwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_fin_flag_percentage_in_fwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="FwdFINFlagPercentageInFwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdFINFlagPercentageInFwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagFIN</span><span class="p">():</span>
+                <span class="n">counts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdPSHFlagPercentageInFwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagPercentageInFwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdPSHFlagPercentageInFwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdPSHFlagPercentageInFwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagPercentageInFwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_psh_flag_percentage_in_fwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="FwdPSHFlagPercentageInFwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdPSHFlagPercentageInFwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagPSH</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdURGFlagPercentageInFwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagPercentageInFwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdURGFlagPercentageInFwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdURGFlagPercentageInFwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagPercentageInFwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_urg_flag_percentage_in_fwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="FwdURGFlagPercentageInFwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdURGFlagPercentageInFwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagURG</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdECEFlagPercentageInFwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagPercentageInFwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdECEFlagPercentageInFwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdECEFlagPercentageInFwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagPercentageInFwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_ece_flag_percentage_in_fwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="FwdECEFlagPercentageInFwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdECEFlagPercentageInFwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagECE</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdSYNFlagPercentageInFwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagPercentageInFwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdSYNFlagPercentageInFwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdSYNFlagPercentageInFwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagPercentageInFwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_syn_flag_percentage_in_fwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="FwdSYNFlagPercentageInFwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdSYNFlagPercentageInFwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagSYN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdACKFlagPercentageInFwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagPercentageInFwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdACKFlagPercentageInFwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdACKFlagPercentageInFwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagPercentageInFwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_ack_flag_percentage_in_fwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="FwdACKFlagPercentageInFwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdACKFlagPercentageInFwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagACK</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdCWRFlagPercentageInFwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagPercentageInFwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdCWRFlagPercentageInFwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdCWRFlagPercentageInFwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagPercentageInFwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_cwr_flag_percentage_in_fwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="FwdCWRFlagPercentageInFwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdCWRFlagPercentageInFwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagCWR</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FwdRSTFlagPercentageInFwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagPercentageInFwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FwdRSTFlagPercentageInFwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="FwdRSTFlagPercentageInFwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagPercentageInFwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fwd_rst_flag_percentage_in_fwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="FwdRSTFlagPercentageInFwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.FwdRSTFlagPercentageInFwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagRST</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_forwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdFINFlagPercentageInBwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagPercentageInBwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdFINFlagPercentageInBwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdFINFlagPercentageInBwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagPercentageInBwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_fin_flag_percentage_in_bwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="BwdFINFlagPercentageInBwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdFINFlagPercentageInBwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagFIN</span><span class="p">():</span>
+                <span class="n">counts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdPSHFlagPercentageInBwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagPercentageInBwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdPSHFlagPercentageInBwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdPSHFlagPercentageInBwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagPercentageInBwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_psh_flag_percentage_in_bwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="BwdPSHFlagPercentageInBwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdPSHFlagPercentageInBwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagPSH</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdURGFlagPercentageInBwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagPercentageInBwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdURGFlagPercentageInBwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdURGFlagPercentageInBwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagPercentageInBwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_urg_flag_percentage_in_bwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="BwdURGFlagPercentageInBwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdURGFlagPercentageInBwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagURG</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdECEFlagPercentageInBwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagPercentageInBwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdECEFlagPercentageInBwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdECEFlagPercentageInBwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagPercentageInBwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_ece_flag_percentage_in_bwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="BwdECEFlagPercentageInBwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdECEFlagPercentageInBwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagECE</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdSYNFlagPercentageInBwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagPercentageInBwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdSYNFlagPercentageInBwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdSYNFlagPercentageInBwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagPercentageInBwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_syn_flag_percentage_in_bwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="BwdSYNFlagPercentageInBwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdSYNFlagPercentageInBwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagSYN</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdACKFlagPercentageInBwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagPercentageInBwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdACKFlagPercentageInBwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdACKFlagPercentageInBwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagPercentageInBwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_ack_flag_percentage_in_bwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="BwdACKFlagPercentageInBwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdACKFlagPercentageInBwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagACK</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdCWRFlagPercentageInBwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagPercentageInBwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdCWRFlagPercentageInBwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdCWRFlagPercentageInBwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagPercentageInBwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_cwr_flag_percentage_in_bwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="BwdCWRFlagPercentageInBwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdCWRFlagPercentageInBwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagCWR</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">()))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BwdRSTFlagPercentageInBwdPackets">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagPercentageInBwdPackets">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BwdRSTFlagPercentageInBwdPackets</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
+<div class="viewcode-block" id="BwdRSTFlagPercentageInBwdPackets.name">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagPercentageInBwdPackets.name">[docs]</a>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bwd_rst_flag_percentage_in_bwd_packets&quot;</span></div>
+
+<div class="viewcode-block" id="BwdRSTFlagPercentageInBwdPackets.extract">
+<a class="viewcode-back" href="../../../api/NTLFlowLyzer/features/flag_related/index.html#NTLFlowLyzer.features.flag_related.BwdRSTFlagPercentageInBwdPackets.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="p">:</span> <span class="n">Flow</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">has_flagRST</span><span class="p">():</span>
+                <span class="n">counts</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">flow</span><span class="o">.</span><span class="n">get_backwardpackets</span><span class="p">()))</span></div>
+</div>
+
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

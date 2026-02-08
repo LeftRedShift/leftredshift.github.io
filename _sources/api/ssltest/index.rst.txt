@@ -1,0 +1,50 @@
+ssltest
+=======
+
+.. py:module:: ssltest
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ssltest.options
+   ssltest.hello
+   ssltest.hb
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   ssltest.h2bin
+   ssltest.hexdump
+   ssltest.recvall
+   ssltest.recvmsg
+   ssltest.hit_hb
+   ssltest.main
+
+
+Module Contents
+---------------
+
+.. py:data:: options
+
+.. py:function:: h2bin(x)
+
+.. py:data:: hello
+
+.. py:data:: hb
+
+.. py:function:: hexdump(s: bytes)
+
+.. py:function:: recvall(s, length, timeout=5)
+
+.. py:function:: recvmsg(s)
+
+.. py:function:: hit_hb(s)
+
+.. py:function:: main()
+

@@ -1,0 +1,59 @@
+modules.datasets
+================
+
+.. py:module:: modules.datasets
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   modules.datasets.PathLike
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   modules.datasets.load_features
+   modules.datasets.build_dataset_unsupervised_for_capture
+
+
+Module Contents
+---------------
+
+.. py:data:: PathLike
+
+.. py:function:: load_features(csv_paths: Union[PathLike, Iterable[PathLike]]) -> pandas.DataFrame
+
+   Carrega features
+
+   :param csv_paths: Caminhos dos arquivos csv
+   :type csv_paths: Union[PathLike, Iterable[PathLike]]
+   :raises FileNotFoundError: Erro caso o arquivo não seja encontrado
+   :raises ValueError: Erro caso o arquivo não possua valores que dê para trabalhar
+   :return: Dataframe
+   :rtype: pd.DataFrame
+
+
+.. py:function:: build_dataset_unsupervised_for_capture(capture_pcap: PathLike, *, features_dir: PathLike = 'features', outdir: PathLike = 'datasets', save: bool = True) -> pathlib.Path
+
+   Monta o dataset não supervisionado referente a UMA captura.
+   Procura automaticamente ntlflowlyzer-<base>.csv, tshark-<base>.csv, scapy-<base>.csv.
+   Salva datasets/unsupervised-<base>.csv
+
+   :param capture_pcap: Arquivo de captura
+   :type capture_pcap: PathLike
+   :param features_dir: Diretório das features, padrão é "features/"
+   :type features_dir: PathLike, optional
+   :param outdir: Diretório dos datasets, padrão é "datasets/"
+   :type outdir: PathLike, optional
+   :param save: Booleano para salvar em arquivo ou não, padrão é True
+   :type save: bool, optional
+   :raises FileNotFoundError: Erro caso o arquivo não seja encontrado
+   :return: Caminho completo do salvamento do dataset
+   :rtype: Path
+
+

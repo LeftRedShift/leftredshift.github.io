@@ -1,0 +1,59 @@
+NTLFlowLyzer.network_flow_capturer.network_flow_capturer
+========================================================
+
+.. py:module:: NTLFlowLyzer.network_flow_capturer.network_flow_capturer
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.network_flow_capturer.network_flow_capturer.NetworkFlowCapturer
+
+
+Module Contents
+---------------
+
+.. py:class:: NetworkFlowCapturer(max_flow_duration: int, activity_timeout: int, check_flows_ending_min_flows: int, capturer_updating_flows_min_value: int, read_packets_count_value_log_info: int, vxlan_ip: str, continues_batch_address: str, continues_pcap_prefix: str, number_of_continues_files: int, continues_batch_mode: bool, base_number_continues_files: int)
+
+   .. py:attribute:: flows_counter
+      :value: 0
+
+
+
+   .. py:attribute:: tcp_packets
+      :value: 0
+
+
+
+   .. py:attribute:: udp_packets
+      :value: 0
+
+
+
+   .. py:attribute:: ip_packets
+      :value: 0
+
+
+
+   .. py:attribute:: all_packets
+      :value: 0
+
+
+
+   .. py:method:: pcap_summary(address)
+
+
+   .. py:method:: get_protocol_name(port)
+
+
+   .. py:method:: pcap_parser(pcap_file: str, flows: list, flows_lock)
+
+
+   .. py:method:: capture(pcap_file: str, flows: list, flows_lock, thread_finished) -> list
+
+
+   .. py:method:: flow_is_ended(flow, packet)
+
+

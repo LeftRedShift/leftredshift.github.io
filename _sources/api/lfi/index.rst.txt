@@ -1,0 +1,195 @@
+lfi
+===
+
+.. py:module:: lfi
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   lfi.ColGreenMark
+   lfi.ColYellow
+   lfi.ColYellowMark
+   lfi.ColRedMark
+   lfi.ColEnd
+   lfi.url
+   lfi.headers
+   lfi.only_url
+   lfi.package_status
+   lfi.package_status
+   lfi.only_url
+   lfi.XCF
+   lfi.XCF
+   lfi.XCF
+   lfi.XCF
+   lfi.XCF
+   lfi.linux_wordlist
+   lfi.windows_wordlist
+   lfi.request
+   lfi.cookie_mode
+   lfi.data_mode
+   lfi.wordlist
+   lfi.pid
+   lfi.pids
+   lfi.wrapper
+   lfi.key
+   lfi.fd
+   lfi.blacklist
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   lfi.Help
+   lfi.AdHelp
+   lfi.CheckCon
+   lfi.XCF_A
+   lfi.XCF_B
+   lfi.XCF_C
+   lfi.XCF_D
+   lfi.PackageStatus
+   lfi.Enum
+   lfi.Wordlist
+   lfi.PIDS
+   lfi.PID
+   lfi.FD
+   lfi.Wrapper
+   lfi.IdRSA
+   lfi.Main
+
+
+Module Contents
+---------------
+
+.. py:data:: ColGreenMark
+   :value: '\x1b[1;32m'
+
+
+.. py:data:: ColYellow
+   :value: '\x1b[0;33m'
+
+
+.. py:data:: ColYellowMark
+   :value: '\x1b[1;33m'
+
+
+.. py:data:: ColRedMark
+   :value: '\x1b[1;31m'
+
+
+.. py:data:: ColEnd
+   :value: '\x1b[0m'
+
+
+.. py:function:: Help()
+
+.. py:function:: AdHelp()
+
+.. py:data:: url
+
+.. py:data:: headers
+
+.. py:function:: CheckCon()
+
+.. py:function:: XCF_A(response)
+
+.. py:function:: XCF_B(response)
+
+.. py:function:: XCF_C(response)
+
+.. py:function:: XCF_D(response)
+
+.. py:function:: PackageStatus(response, content)
+
+.. py:data:: only_url
+   :value: False
+
+
+.. py:data:: package_status
+   :value: False
+
+
+.. py:data:: package_status
+   :value: True
+
+
+.. py:data:: only_url
+   :value: True
+
+
+.. py:data:: XCF
+
+.. py:data:: XCF
+
+.. py:data:: XCF
+
+.. py:data:: XCF
+
+.. py:data:: XCF
+
+.. py:data:: linux_wordlist
+   :value: []
+
+
+.. py:data:: windows_wordlist
+   :value: []
+
+
+.. py:function:: Enum(prior_wordlist, later_wordlist)
+
+.. py:function:: Wordlist()
+
+.. py:function:: PIDS()
+
+.. py:function:: PID()
+
+.. py:function:: FD(fd)
+
+.. py:function:: Wrapper()
+
+.. py:function:: IdRSA()
+
+.. py:data:: request
+
+.. py:data:: cookie_mode
+   :value: None
+
+
+.. py:data:: data_mode
+   :value: None
+
+
+.. py:data:: wordlist
+   :value: None
+
+
+.. py:data:: pid
+   :value: None
+
+
+.. py:data:: pids
+   :value: None
+
+
+.. py:data:: wrapper
+   :value: None
+
+
+.. py:data:: key
+   :value: None
+
+
+.. py:data:: fd
+   :value: None
+
+
+.. py:data:: blacklist
+   :value: None
+
+
+.. py:function:: Main()
+

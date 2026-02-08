@@ -1,0 +1,89 @@
+modules.runners
+===============
+
+.. py:module:: modules.runners
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   modules.runners.docker_available
+   modules.runners.docker_container_id_by_name
+   modules.runners.docker_rm_force
+   modules.runners.docker_inspect
+   modules.runners.docker_container_status
+   modules.runners.docker_logs
+   modules.runners.docker_run_detached
+
+
+Module Contents
+---------------
+
+.. py:function:: docker_available() -> bool
+
+   Verifica se o Docker está disponível pra uso
+
+   :return: Retorna true ou false
+   :rtype: bool
+
+
+.. py:function:: docker_container_id_by_name(name: str) -> Optional[str]
+
+   Regex exata: ^name$ para identificar container
+
+   :param name: Nome parcial
+   :type name: str
+   :return: Nome exato
+   :rtype: Optional[str]
+
+
+.. py:function:: docker_rm_force(name_or_id: str) -> Dict[str, Any]
+
+   Remoção de container
+
+   :param name_or_id: Nome ou ID de entrada
+   :type name_or_id: str
+   :return: Nome ou ID que será usado na remoção forçada
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: docker_inspect(name_or_id: str) -> Optional[dict]
+
+   Inspeção de container
+
+   :param name_or_id: Nome ou ID de entrada
+   :type name_or_id: str
+   :return: Nome ou ID que será usado na inspeção
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: docker_container_status(name: str) -> Dict[str, Any]
+
+   Status de container
+
+   :param name_or_id: Nome ou ID de entrada
+   :type name_or_id: str
+   :return: Nome ou ID que será usado na verificação
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: docker_logs(name_or_id: str, tail: int = 200) -> Dict[str, Any]
+
+.. py:function:: docker_run_detached(*, image: str, name: str, args: List[str], remove_if_exists: bool = True) -> Dict[str, Any]
+
+   Execução de container
+
+   :param image: Nome da imagem
+   :type image: str
+   :param name: Nome do container
+   :type name: str
+   :param args: Parâmetros associados
+   :type args: List[str]
+   :param remove_if_exists: Parâmetro de remover se existir, padrão é true
+   :type remove_if_exists: bool, optional
+   :return: Dicionário com todas as informações da execução
+   :rtype: Dict[str, Any]
+
+

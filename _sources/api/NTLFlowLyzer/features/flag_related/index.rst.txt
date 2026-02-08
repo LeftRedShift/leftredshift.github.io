@@ -1,0 +1,1168 @@
+NTLFlowLyzer.features.flag_related
+==================================
+
+.. py:module:: NTLFlowLyzer.features.flag_related
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.features.flag_related.FINFlagCounts
+   NTLFlowLyzer.features.flag_related.PSHFlagCounts
+   NTLFlowLyzer.features.flag_related.URGFlagCounts
+   NTLFlowLyzer.features.flag_related.ECEFlagCounts
+   NTLFlowLyzer.features.flag_related.SYNFlagCounts
+   NTLFlowLyzer.features.flag_related.ACKFlagCounts
+   NTLFlowLyzer.features.flag_related.CWRFlagCounts
+   NTLFlowLyzer.features.flag_related.RSTFlagCounts
+   NTLFlowLyzer.features.flag_related.FwdFINFlagCounts
+   NTLFlowLyzer.features.flag_related.FwdPSHFlagCounts
+   NTLFlowLyzer.features.flag_related.FwdURGFlagCounts
+   NTLFlowLyzer.features.flag_related.FwdECEFlagCounts
+   NTLFlowLyzer.features.flag_related.FwdSYNFlagCounts
+   NTLFlowLyzer.features.flag_related.FwdACKFlagCounts
+   NTLFlowLyzer.features.flag_related.FwdCWRFlagCounts
+   NTLFlowLyzer.features.flag_related.FwdRSTFlagCounts
+   NTLFlowLyzer.features.flag_related.BwdFINFlagCounts
+   NTLFlowLyzer.features.flag_related.BwdPSHFlagCounts
+   NTLFlowLyzer.features.flag_related.BwdURGFlagCounts
+   NTLFlowLyzer.features.flag_related.BwdECEFlagCounts
+   NTLFlowLyzer.features.flag_related.BwdSYNFlagCounts
+   NTLFlowLyzer.features.flag_related.BwdACKFlagCounts
+   NTLFlowLyzer.features.flag_related.BwdCWRFlagCounts
+   NTLFlowLyzer.features.flag_related.BwdRSTFlagCounts
+   NTLFlowLyzer.features.flag_related.FINFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.PSHFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.URGFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.ECEFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.SYNFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.ACKFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.CWRFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.RSTFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdFINFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdPSHFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdURGFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdECEFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdSYNFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdACKFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdCWRFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdRSTFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.BwdFINFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.BwdPSHFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.BwdURGFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.BwdECEFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.BwdSYNFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.BwdACKFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.BwdCWRFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.BwdRSTFlagPercentageInTotal
+   NTLFlowLyzer.features.flag_related.FwdFINFlagPercentageInFwdPackets
+   NTLFlowLyzer.features.flag_related.FwdPSHFlagPercentageInFwdPackets
+   NTLFlowLyzer.features.flag_related.FwdURGFlagPercentageInFwdPackets
+   NTLFlowLyzer.features.flag_related.FwdECEFlagPercentageInFwdPackets
+   NTLFlowLyzer.features.flag_related.FwdSYNFlagPercentageInFwdPackets
+   NTLFlowLyzer.features.flag_related.FwdACKFlagPercentageInFwdPackets
+   NTLFlowLyzer.features.flag_related.FwdCWRFlagPercentageInFwdPackets
+   NTLFlowLyzer.features.flag_related.FwdRSTFlagPercentageInFwdPackets
+   NTLFlowLyzer.features.flag_related.BwdFINFlagPercentageInBwdPackets
+   NTLFlowLyzer.features.flag_related.BwdPSHFlagPercentageInBwdPackets
+   NTLFlowLyzer.features.flag_related.BwdURGFlagPercentageInBwdPackets
+   NTLFlowLyzer.features.flag_related.BwdECEFlagPercentageInBwdPackets
+   NTLFlowLyzer.features.flag_related.BwdSYNFlagPercentageInBwdPackets
+   NTLFlowLyzer.features.flag_related.BwdACKFlagPercentageInBwdPackets
+   NTLFlowLyzer.features.flag_related.BwdCWRFlagPercentageInBwdPackets
+   NTLFlowLyzer.features.flag_related.BwdRSTFlagPercentageInBwdPackets
+
+
+Module Contents
+---------------
+
+.. py:class:: FINFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fin_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PSHFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'psh_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: URGFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'urg_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: ECEFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'ece_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: SYNFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'syn_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: ACKFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'ack_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: CWRFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cwr_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: RSTFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'rst_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdFINFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_fin_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdPSHFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_psh_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdURGFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_urg_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdECEFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_ece_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdSYNFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_syn_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdACKFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_ack_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdCWRFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_cwr_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdRSTFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_rst_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdFINFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_fin_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdPSHFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_psh_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdURGFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_urg_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdECEFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_ece_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdSYNFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_syn_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdACKFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_ack_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdCWRFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_cwr_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdRSTFlagCounts
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_rst_flag_counts'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FINFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fin_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PSHFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'psh_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: URGFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'urg_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: ECEFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'ece_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SYNFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'syn_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: ACKFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'ack_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: CWRFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cwr_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: RSTFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'rst_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdFINFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_fin_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPSHFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_psh_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdURGFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_urg_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdECEFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_ece_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSYNFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_syn_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdACKFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_ack_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdCWRFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_cwr_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdRSTFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_rst_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdFINFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_fin_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPSHFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_psh_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdURGFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_urg_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdECEFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_ece_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSYNFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_syn_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdACKFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_ack_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdCWRFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_cwr_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdRSTFlagPercentageInTotal
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_rst_flag_percentage_in_total'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdFINFlagPercentageInFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_fin_flag_percentage_in_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPSHFlagPercentageInFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_psh_flag_percentage_in_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdURGFlagPercentageInFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_urg_flag_percentage_in_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdECEFlagPercentageInFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_ece_flag_percentage_in_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSYNFlagPercentageInFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_syn_flag_percentage_in_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdACKFlagPercentageInFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_ack_flag_percentage_in_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdCWRFlagPercentageInFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_cwr_flag_percentage_in_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdRSTFlagPercentageInFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_rst_flag_percentage_in_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdFINFlagPercentageInBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_fin_flag_percentage_in_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPSHFlagPercentageInBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_psh_flag_percentage_in_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdURGFlagPercentageInBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_urg_flag_percentage_in_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdECEFlagPercentageInBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_ece_flag_percentage_in_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSYNFlagPercentageInBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_syn_flag_percentage_in_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdACKFlagPercentageInBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_ack_flag_percentage_in_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdCWRFlagPercentageInBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_cwr_flag_percentage_in_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdRSTFlagPercentageInBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_rst_flag_percentage_in_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+

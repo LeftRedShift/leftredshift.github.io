@@ -1,0 +1,34 @@
+NTLFlowLyzer.features.utils
+===========================
+
+.. py:module:: NTLFlowLyzer.features.utils
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.features.utils.calculate_flow_payload_bytes
+   NTLFlowLyzer.features.utils.calculate_fwd_flow_payload_bytes
+   NTLFlowLyzer.features.utils.calculate_bwd_flow_payload_bytes
+   NTLFlowLyzer.features.utils.calculate_IAT
+   NTLFlowLyzer.features.utils.calculate_flow_duration
+   NTLFlowLyzer.features.utils.calculate_flow_header_bytes
+
+
+Module Contents
+---------------
+
+.. py:function:: calculate_flow_payload_bytes(flow: NTLFlowLyzer.network_flow_capturer.Flow)
+
+.. py:function:: calculate_fwd_flow_payload_bytes(flow: NTLFlowLyzer.network_flow_capturer.Flow)
+
+.. py:function:: calculate_bwd_flow_payload_bytes(flow: NTLFlowLyzer.network_flow_capturer.Flow)
+
+.. py:function:: calculate_IAT(packets: list)
+
+.. py:function:: calculate_flow_duration(flow: NTLFlowLyzer.network_flow_capturer.Flow)
+
+.. py:function:: calculate_flow_header_bytes(packets: list)
+

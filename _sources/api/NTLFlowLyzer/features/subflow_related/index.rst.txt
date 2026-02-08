@@ -1,0 +1,88 @@
+NTLFlowLyzer.features.subflow_related
+=====================================
+
+.. py:module:: NTLFlowLyzer.features.subflow_related
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.features.subflow_related.SubflowFwdPackets
+   NTLFlowLyzer.features.subflow_related.SubflowBwdPackets
+   NTLFlowLyzer.features.subflow_related.SubflowFwdBytes
+   NTLFlowLyzer.features.subflow_related.SubflowBwdBytes
+
+
+Module Contents
+---------------
+
+.. py:class:: SubflowFwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'subflow_fwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SubflowBwdPackets
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'subflow_bwd_packets'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SubflowFwdBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'subflow_fwd_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SubflowBwdBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'subflow_bwd_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+

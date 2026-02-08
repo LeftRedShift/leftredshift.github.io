@@ -1,0 +1,28 @@
+NTLFlowLyzer.feature_extractor
+==============================
+
+.. py:module:: NTLFlowLyzer.feature_extractor
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.feature_extractor.FeatureExtractor
+
+
+Module Contents
+---------------
+
+.. py:class:: FeatureExtractor(floating_point_unit: str)
+
+   Bases: :py:obj:`object`
+
+
+   .. py:attribute:: floating_point_unit
+
+
+   .. py:method:: execute(data: list, data_lock, flows: NTLFlowLyzer.features.List[NTLFlowLyzer.features.Flow], features_ignore_list: list = [], label: str = '') -> list
+
+

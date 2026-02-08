@@ -1,0 +1,147 @@
+NTLFlowLyzer.config_loader
+==========================
+
+.. py:module:: NTLFlowLyzer.config_loader
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.config_loader.ConfigLoader
+
+
+Module Contents
+---------------
+
+.. py:class:: ConfigLoader(config_file_address: str)
+
+   .. py:attribute:: config_file_address
+
+
+   .. py:attribute:: pcap_file_address
+      :type:  str
+      :value: None
+
+
+
+   .. py:attribute:: output_file_address
+      :type:  str
+      :value: './'
+
+
+
+   .. py:attribute:: interface_name
+      :type:  str
+      :value: 'eth0'
+
+
+
+   .. py:attribute:: max_flow_duration
+      :type:  int
+      :value: 120000
+
+
+
+   .. py:attribute:: activity_timeout
+      :type:  int
+      :value: 5000
+
+
+
+   .. py:attribute:: protocols
+      :type:  list
+      :value: []
+
+
+
+   .. py:attribute:: floating_point_unit
+      :type:  str
+      :value: '.4f'
+
+
+
+   .. py:attribute:: features_ignore_list
+      :type:  list
+      :value: []
+
+
+
+   .. py:attribute:: number_of_threads
+      :type:  int
+
+
+   .. py:attribute:: label
+      :value: 'Unknown'
+
+
+
+   .. py:attribute:: feature_extractor_min_flows
+      :value: 4000
+
+
+
+   .. py:attribute:: writer_min_rows
+      :value: 6000
+
+
+
+   .. py:attribute:: read_packets_count_value_log_info
+      :value: 10000
+
+
+
+   .. py:attribute:: check_flows_ending_min_flows
+      :value: 2000
+
+
+
+   .. py:attribute:: capturer_updating_flows_min_value
+      :value: 2000
+
+
+
+   .. py:attribute:: max_rows_number
+      :value: 900000
+
+
+
+   .. py:attribute:: batch_address
+      :value: ''
+
+
+
+   .. py:attribute:: vxlan_ip
+      :value: ''
+
+
+
+   .. py:attribute:: continues_batch_address
+      :value: ''
+
+
+
+   .. py:attribute:: continues_pcap_prefix
+      :value: ''
+
+
+
+   .. py:attribute:: batch_address_output
+      :value: ''
+
+
+
+   .. py:attribute:: number_of_continues_files
+      :value: 0
+
+
+
+   .. py:attribute:: base_number_continues_files
+      :value: 1
+
+
+
+   .. py:method:: read_config_file()
+
+

@@ -1,0 +1,250 @@
+NTLFlowLyzer.network_flow_capturer.flow
+=======================================
+
+.. py:module:: NTLFlowLyzer.network_flow_capturer.flow
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.network_flow_capturer.flow.Flow
+
+
+Module Contents
+---------------
+
+.. py:class:: Flow(packet, activity_timeout)
+
+   Bases: :py:obj:`object`
+
+
+   .. py:attribute:: src_ip
+
+
+   .. py:attribute:: dst_ip
+
+
+   .. py:attribute:: src_port
+
+
+   .. py:attribute:: dst_port
+
+
+   .. py:attribute:: protocol
+
+
+   .. py:attribute:: flow_start_time
+
+
+   .. py:attribute:: flow_last_seen
+
+
+   .. py:attribute:: packets
+      :value: []
+
+
+
+   .. py:attribute:: sflastts
+      :value: -1
+
+
+
+   .. py:attribute:: sfcount
+      :value: 0
+
+
+
+   .. py:attribute:: flow_active
+      :value: []
+
+
+
+   .. py:attribute:: flow_idle
+      :value: []
+
+
+
+   .. py:attribute:: start_active_time
+
+
+   .. py:attribute:: end_active_time
+
+
+   .. py:attribute:: fbulkDuration
+      :value: 0
+
+
+
+   .. py:attribute:: fbulkPacketCount
+      :value: 0
+
+
+
+   .. py:attribute:: fbulkSizeTotal
+      :value: 0
+
+
+
+   .. py:attribute:: fbulkStateCount
+      :value: 0
+
+
+
+   .. py:attribute:: fbulkPacketCountHelper
+      :value: 0
+
+
+
+   .. py:attribute:: fbulkStartHelper
+      :value: 0
+
+
+
+   .. py:attribute:: fbulkSizeHelper
+      :value: 0
+
+
+
+   .. py:attribute:: flastBulkTS
+      :value: 0
+
+
+
+   .. py:attribute:: bbulkDuration
+      :value: 0
+
+
+
+   .. py:attribute:: bbulkPacketCount
+      :value: 0
+
+
+
+   .. py:attribute:: bbulkSizeTotal
+      :value: 0
+
+
+
+   .. py:attribute:: bbulkStateCount
+      :value: 0
+
+
+
+   .. py:attribute:: bbulkPacketCountHelper
+      :value: 0
+
+
+
+   .. py:attribute:: bbulkStartHelper
+      :value: 0
+
+
+
+   .. py:attribute:: bbulkSizeHelper
+      :value: 0
+
+
+
+   .. py:attribute:: blastBulkTS
+      :value: 0
+
+
+
+   .. py:method:: get_src_ip()
+
+
+   .. py:method:: get_dst_ip()
+
+
+   .. py:method:: get_src_port()
+
+
+   .. py:method:: get_dst_port()
+
+
+   .. py:method:: get_protocol()
+
+
+   .. py:method:: get_packets() -> List[NTLFlowLyzer.network_flow_capturer.packet.Packet]
+
+
+   .. py:method:: get_flow_start_time()
+
+
+   .. py:method:: get_flow_last_seen()
+
+
+   .. py:method:: get_forwardpackets() -> List[NTLFlowLyzer.network_flow_capturer.packet.Packet]
+
+
+   .. py:method:: get_backwardpackets() -> List[NTLFlowLyzer.network_flow_capturer.packet.Packet]
+
+
+   .. py:method:: get_timestamp()
+
+
+   .. py:method:: total_packets_payloadbytes()
+
+
+   .. py:method:: update_subflow(packet_time)
+
+
+   .. py:method:: get_subflow_count()
+
+
+   .. py:method:: updateFlowBulk(packet)
+
+
+   .. py:method:: updateForwardBulk(packet, tsOflastBulkInOther)
+
+
+   .. py:method:: updateBackwardBulk(packet, tsOflastBulkInOther)
+
+
+   .. py:method:: get_fBulkStateCount()
+
+
+   .. py:method:: get_fBulkSizeTotal()
+
+
+   .. py:method:: get_fBulkPacketCount()
+
+
+   .. py:method:: get_fBulkDuration()
+
+
+   .. py:method:: get_bBulkStateCount()
+
+
+   .. py:method:: get_bBulkSizeTotal()
+
+
+   .. py:method:: get_bBulkPacketCount()
+
+
+   .. py:method:: get_bBulkDuration()
+
+
+   .. py:method:: update_active_idle_time(current_time, active_thr=100)
+
+
+   .. py:method:: get_flow_idle()
+
+
+   .. py:method:: get_flow_active()
+
+
+   .. py:method:: add_packet(packet)
+
+
+   .. py:method:: has_two_FIN_flags()
+
+
+   .. py:method:: has_flagRST()
+
+
+   .. py:method:: actvity_timeout(packet: NTLFlowLyzer.network_flow_capturer.packet.Packet)
+
+

@@ -1,0 +1,21 @@
+client
+======
+
+.. py:module:: client
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   client.main
+
+
+Module Contents
+---------------
+
+.. py:function:: main(var)
+   :async:
+
+

@@ -1,0 +1,31 @@
+NTLFlowLyzer.writers.strategy
+=============================
+
+.. py:module:: NTLFlowLyzer.writers.strategy
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.writers.strategy.Strategy
+
+
+Module Contents
+---------------
+
+.. py:class:: Strategy
+
+   Bases: :py:obj:`abc.ABC`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:method:: write(file_address: str, data: list) -> None
+      :abstractmethod:
+
+
+

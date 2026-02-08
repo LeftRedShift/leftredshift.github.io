@@ -1,0 +1,142 @@
+NTLFlowLyzer.features.rate_related
+==================================
+
+.. py:module:: NTLFlowLyzer.features.rate_related
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.features.rate_related.BytesRate
+   NTLFlowLyzer.features.rate_related.FwdBytesRate
+   NTLFlowLyzer.features.rate_related.BwdBytesRate
+   NTLFlowLyzer.features.rate_related.PacketsRate
+   NTLFlowLyzer.features.rate_related.BwdPacketsRate
+   NTLFlowLyzer.features.rate_related.FwdPacketsRate
+   NTLFlowLyzer.features.rate_related.DownUpRate
+
+
+Module Contents
+---------------
+
+.. py:class:: BytesRate
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bytes_rate'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdBytesRate
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_bytes_rate'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdBytesRate
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_bytes_rate'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PacketsRate
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'packets_rate'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPacketsRate
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_packets_rate'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPacketsRate
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_packets_rate'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: DownUpRate
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'down_up_rate'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+

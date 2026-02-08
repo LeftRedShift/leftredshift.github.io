@@ -1,0 +1,126 @@
+modules.registry
+================
+
+.. py:module:: modules.registry
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   modules.registry.CATEGORIES
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   modules.registry.ParamSpec
+   modules.registry.AttackSpec
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   modules.registry.A
+
+
+Module Contents
+---------------
+
+.. py:class:: ParamSpec
+
+   .. py:attribute:: key
+      :type:  str
+
+
+   .. py:attribute:: label
+      :type:  str
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: placeholder
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: default
+      :type:  Optional[Any]
+      :value: None
+
+
+
+.. py:class:: AttackSpec
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: description
+      :type:  str
+
+
+   .. py:attribute:: image
+      :type:  str
+
+
+   .. py:attribute:: container_name
+      :type:  str
+
+
+   .. py:attribute:: params
+      :type:  List[ParamSpec]
+      :value: []
+
+
+
+   .. py:attribute:: no_params_note
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: details_warning
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: mitre
+      :type:  Optional[Union[str, List[str]]]
+      :value: None
+
+
+
+   .. py:attribute:: tools
+      :type:  Optional[List[Dict[str, str]]]
+      :value: None
+
+
+
+   .. py:attribute:: max_runtime_s
+      :type:  int
+      :value: 10
+
+
+
+   .. py:method:: runner(resolved_params: Dict[str, Any]) -> Dict[str, Any]
+
+
+.. py:function:: A(*, id: str, name: str, description: str, image_base: str, params: Optional[List[ParamSpec]] = None, no_params_note: Optional[str] = None, details_warning: Optional[str] = None, mitre: Optional[Union[str, List[str]]] = None, tools: Optional[List[Dict[str, str]]] = None, max_runtime_s: int = 10) -> AttackSpec
+
+.. py:data:: CATEGORIES
+   :type:  Dict[str, List[AttackSpec]]
+

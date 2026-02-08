@@ -1,0 +1,3113 @@
+NTLFlowLyzer.features.len_related
+=================================
+
+.. py:module:: NTLFlowLyzer.features.len_related
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.features.len_related.TotalPayloadBytes
+   NTLFlowLyzer.features.len_related.FwdTotalPayloadBytes
+   NTLFlowLyzer.features.len_related.BwdTotalPayloadBytes
+   NTLFlowLyzer.features.len_related.PayloadBytesMax
+   NTLFlowLyzer.features.len_related.PayloadBytesMin
+   NTLFlowLyzer.features.len_related.PayloadBytesMean
+   NTLFlowLyzer.features.len_related.PayloadBytesStd
+   NTLFlowLyzer.features.len_related.PayloadBytesVariance
+   NTLFlowLyzer.features.len_related.PayloadBytesMedian
+   NTLFlowLyzer.features.len_related.PayloadBytesSkewness
+   NTLFlowLyzer.features.len_related.PayloadBytesCov
+   NTLFlowLyzer.features.len_related.PayloadBytesMode
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesMax
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesMin
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesMean
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesStd
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesVariance
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesMedian
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesSkewness
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesCov
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesMode
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesMax
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesMin
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesMean
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesStd
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesVariance
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesMedian
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesSkewness
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesCov
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesMode
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeMean
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeMax
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeMin
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeStd
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeVariance
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeMedian
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeSkewness
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeCov
+   NTLFlowLyzer.features.len_related.FwdSegmentSizeMode
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeMean
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeMax
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeMin
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeStd
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeVariance
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeMedian
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeSkewness
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeCov
+   NTLFlowLyzer.features.len_related.BwdSegmentSizeMode
+   NTLFlowLyzer.features.len_related.SegmentSizeMean
+   NTLFlowLyzer.features.len_related.SegmentSizeMax
+   NTLFlowLyzer.features.len_related.SegmentSizeMin
+   NTLFlowLyzer.features.len_related.SegmentSizeStd
+   NTLFlowLyzer.features.len_related.SegmentSizeVariance
+   NTLFlowLyzer.features.len_related.SegmentSizeMedian
+   NTLFlowLyzer.features.len_related.SegmentSizeSkewness
+   NTLFlowLyzer.features.len_related.SegmentSizeCov
+   NTLFlowLyzer.features.len_related.SegmentSizeMode
+   NTLFlowLyzer.features.len_related.TotalHeaderBytes
+   NTLFlowLyzer.features.len_related.MaxHeaderBytes
+   NTLFlowLyzer.features.len_related.MinHeaderBytes
+   NTLFlowLyzer.features.len_related.MeanHeaderBytes
+   NTLFlowLyzer.features.len_related.StdHeaderBytes
+   NTLFlowLyzer.features.len_related.MedianHeaderBytes
+   NTLFlowLyzer.features.len_related.SkewnessHeaderBytes
+   NTLFlowLyzer.features.len_related.CoVHeaderBytes
+   NTLFlowLyzer.features.len_related.ModeHeaderBytes
+   NTLFlowLyzer.features.len_related.VarianceHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdTotalHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdMaxHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdMinHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdMeanHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdStdHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdMedianHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdSkewnessHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdCoVHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdModeHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdVarianceHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdTotalHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdMaxHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdMinHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdMeanHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdStdHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdMedianHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdSkewnessHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdCoVHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdModeHeaderBytes
+   NTLFlowLyzer.features.len_related.BwdVarianceHeaderBytes
+   NTLFlowLyzer.features.len_related.FwdInitWinBytes
+   NTLFlowLyzer.features.len_related.BwdInitWinBytes
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenBase
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenMin
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenMax
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenMean
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenMode
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenVariance
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenStd
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenMedian
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.PacketsDeltaLenCoV
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenMin
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenMax
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenMean
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenMode
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenVariance
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenStd
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenMedian
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.BwdPacketsDeltaLenCoV
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenMin
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenMax
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenMean
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenMode
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenVariance
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenStd
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenMedian
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.FwdPacketsDeltaLenCoV
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenMin
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenMax
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenMean
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenMode
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenVariance
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenStd
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenMedian
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.HeaderBytesDeltaLenCoV
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenMin
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenMax
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenMean
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenMode
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenVariance
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenStd
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenMedian
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.BwdHeaderBytesDeltaLenCoV
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenMin
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenMax
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenMean
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenMode
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenVariance
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenStd
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenMedian
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.FwdHeaderBytesDeltaLenCoV
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenMin
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenMax
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenMean
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenMode
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenVariance
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenStd
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenMedian
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.PayloadBytesDeltaLenCoV
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenMin
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenMax
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenMean
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenMode
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenVariance
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenStd
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenMedian
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.BwdPayloadBytesDeltaLenCoV
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenMin
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenMax
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenMean
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenMode
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenVariance
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenStd
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenMedian
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenSkewness
+   NTLFlowLyzer.features.len_related.FwdPayloadBytesDeltaLenCoV
+
+
+Module Contents
+---------------
+
+.. py:class:: TotalPayloadBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'total_payload_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdTotalPayloadBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_total_payload_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdTotalPayloadBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_total_payload_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PayloadBytesMax
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_max'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PayloadBytesMin
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_min'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PayloadBytesMean
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_mean'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesStd
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_std'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesVariance
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_variance'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesMedian
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_median'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesSkewness
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_skewness'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesCov
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_cov'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesMode
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'payload_bytes_mode'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesMax
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_max'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdPayloadBytesMin
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_min'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdPayloadBytesMean
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_mean'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesStd
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_std'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesVariance
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_variance'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesMedian
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_median'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesSkewness
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_skewness'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesCov
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_cov'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesMode
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_payload_bytes_mode'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesMax
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_max'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdPayloadBytesMin
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_min'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdPayloadBytesMean
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_mean'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesStd
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_std'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesVariance
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_variance'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesMedian
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_median'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesSkewness
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_skewness'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesCov
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_cov'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesMode
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_payload_bytes_mode'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeMean
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_mean'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeMax
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_max'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeMin
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_min'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeStd
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_std'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeVariance
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_variance'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeMedian
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_median'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeSkewness
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_skewness'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeCov
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_cov'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdSegmentSizeMode
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_segment_size_mode'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeMean
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_mean'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeMax
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_max'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeMin
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_min'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeStd
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_std'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeVariance
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_variance'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeMedian
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_median'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeSkewness
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_skewness'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeCov
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_cov'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdSegmentSizeMode
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_segment_size_mode'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeMean
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_mean'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeMax
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_max'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeMin
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_min'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeStd
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_std'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeVariance
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_variance'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeMedian
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_median'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeSkewness
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_skewness'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeCov
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_cov'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: SegmentSizeMode
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'segment_size_mode'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: TotalHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'total_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: MaxHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: MinHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: MeanHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: StdHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: MedianHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: SkewnessHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: CoVHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: ModeHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: VarianceHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdTotalHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_total_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdMaxHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_max_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdMinHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_min_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdMeanHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_mean_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdStdHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_std_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdMedianHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_median_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdSkewnessHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_skewness_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdCoVHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_cov_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdModeHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_mode_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdVarianceHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_variance_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdTotalHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_total_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdMaxHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_max_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdMinHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_min_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdMeanHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_mean_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdStdHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_std_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdMedianHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_median_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdSkewnessHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_skewness_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdCoVHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_cov_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdModeHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_mode_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdVarianceHeaderBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_variance_header_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdInitWinBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'fwd_init_win_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdInitWinBytes
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'bwd_init_win_bytes'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PacketsDeltaLenBase
+
+   Bases: :py:obj:`NTLFlowLyzer.features.feature.Feature`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:method:: get_receiving_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+   .. py:method:: get_sending_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+   .. py:method:: get_all_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+   .. py:method:: get_receiving_headers_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+   .. py:method:: get_sending_headers_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+   .. py:method:: get_all_headers_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+   .. py:method:: get_receiving_payload_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+   .. py:method:: get_sending_payload_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+   .. py:method:: get_all_payload_delta(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> list
+
+
+.. py:class:: PacketsDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PacketsDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PacketsDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PacketsDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PacketsDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PacketsDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PacketsDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PacketsDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PacketsDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPacketsDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdPacketsDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdPacketsDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPacketsDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPacketsDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPacketsDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPacketsDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPacketsDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPacketsDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_bwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPacketsDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdPacketsDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdPacketsDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPacketsDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPacketsDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPacketsDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPacketsDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPacketsDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPacketsDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_fwd_packets_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: HeaderBytesDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: HeaderBytesDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: HeaderBytesDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: HeaderBytesDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: HeaderBytesDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: HeaderBytesDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: HeaderBytesDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: HeaderBytesDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: HeaderBytesDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdHeaderBytesDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdHeaderBytesDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdHeaderBytesDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdHeaderBytesDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdHeaderBytesDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdHeaderBytesDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdHeaderBytesDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdHeaderBytesDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdHeaderBytesDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_bwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdHeaderBytesDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdHeaderBytesDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdHeaderBytesDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdHeaderBytesDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdHeaderBytesDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdHeaderBytesDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdHeaderBytesDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdHeaderBytesDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdHeaderBytesDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_fwd_header_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PayloadBytesDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: PayloadBytesDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: PayloadBytesDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdPayloadBytesDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: BwdPayloadBytesDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: BwdPayloadBytesDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_bwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesDeltaLenMin
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'min_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdPayloadBytesDeltaLenMax
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'max_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> int
+
+
+.. py:class:: FwdPayloadBytesDeltaLenMean
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mean_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesDeltaLenMode
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'mode_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesDeltaLenVariance
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'variance_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesDeltaLenStd
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'std_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesDeltaLenMedian
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'median_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesDeltaLenSkewness
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'skewness_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+
+.. py:class:: FwdPayloadBytesDeltaLenCoV
+
+   Bases: :py:obj:`PacketsDeltaLenBase`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :value: 'cov_fwd_payload_bytes_delta_len'
+
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+
+

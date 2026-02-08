@@ -1,0 +1,38 @@
+NTLFlowLyzer.features.feature
+=============================
+
+.. py:module:: NTLFlowLyzer.features.feature
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.features.feature.Feature
+
+
+Module Contents
+---------------
+
+.. py:class:: Feature
+
+   Bases: :py:obj:`abc.ABC`
+
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:method:: extract(flow: NTLFlowLyzer.network_flow_capturer.Flow) -> float
+      :abstractmethod:
+
+
+
+   .. py:method:: set_floating_point_unit(floating_point_unit: str) -> None
+
+

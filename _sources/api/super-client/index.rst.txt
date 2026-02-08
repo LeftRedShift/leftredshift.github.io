@@ -1,0 +1,88 @@
+super-client
+============
+
+.. py:module:: super-client
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   super-client.PER_TRY_TIMEOUT_S
+   super-client.SERVICE_MAP
+   super-client.DEFAULT_PORTS
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   super-client.do_web
+   super-client.do_smb
+   super-client.do_ssh
+   super-client.do_rdp
+   super-client.do_telnet
+   super-client.do_smtp
+   super-client.do_imap
+   super-client.do_pop3
+   super-client.do_ftp
+   super-client.do_dns
+   super-client.do_snmp
+   super-client.do_sip
+   super-client.do_coap
+   super-client.do_mqtt
+   super-client.do_zenoh_pico
+   super-client.do_xrce_dds
+   super-client.usage
+   super-client.main
+
+
+Module Contents
+---------------
+
+.. py:data:: PER_TRY_TIMEOUT_S
+   :value: 1.0
+
+
+.. py:function:: do_web(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_smb(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_ssh(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_rdp(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_telnet(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_smtp(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_imap(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_pop3(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_ftp(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_dns(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_snmp(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_sip(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_coap(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_mqtt(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_zenoh_pico(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:function:: do_xrce_dds(ip: str, port: int) -> Tuple[bool, str]
+
+.. py:data:: SERVICE_MAP
+
+.. py:data:: DEFAULT_PORTS
+
+.. py:function:: usage() -> None
+
+.. py:function:: main() -> int
+

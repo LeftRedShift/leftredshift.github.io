@@ -1,0 +1,52 @@
+server
+======
+
+.. py:module:: server
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   server.CoAPServer
+
+
+Module Contents
+---------------
+
+.. py:class:: CoAPServer(routes: MutableMapping[str, coap_server.resources.base_resource.BaseResource], host='127.0.0.1', port=5683)
+
+   .. py:attribute:: host
+      :value: '127.0.0.1'
+
+
+
+   .. py:attribute:: port
+      :value: 5683
+
+
+
+   .. py:attribute:: sock
+
+
+   .. py:attribute:: routes
+
+
+   .. py:attribute:: handler
+
+
+   .. py:attribute:: running
+      :value: False
+
+
+
+   .. py:method:: start()
+
+
+   .. py:method:: handle_sigterm(signum, frame)
+
+
+   .. py:method:: shutdown()
+
+

@@ -1,0 +1,150 @@
+NTLFlowLyzer.network_flow_capturer.packet
+=========================================
+
+.. py:module:: NTLFlowLyzer.network_flow_capturer.packet
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.network_flow_capturer.packet.Packet
+
+
+Module Contents
+---------------
+
+.. py:class:: Packet(src_ip='', src_port=0, dst_ip='', dst_port=0, protocol=None, flags=0, timestamp=0, forward=True, length=0, payloadbytes=0, header_size=0, window_size=0, seq_number=0, ack_number=0)
+
+   .. py:attribute:: src_ip
+      :value: ''
+
+
+
+   .. py:attribute:: src_port
+      :value: 0
+
+
+
+   .. py:attribute:: dst_ip
+      :value: ''
+
+
+
+   .. py:attribute:: dst_port
+      :value: 0
+
+
+
+   .. py:attribute:: protocol
+      :value: None
+
+
+
+   .. py:attribute:: timestamp
+      :value: 0
+
+
+
+   .. py:attribute:: forward
+      :value: True
+
+
+
+   .. py:attribute:: length
+      :value: 0
+
+
+
+   .. py:attribute:: payloadbytes
+      :value: 0
+
+
+
+   .. py:attribute:: header_size
+      :value: 0
+
+
+
+   .. py:attribute:: window_size
+      :value: 0
+
+
+
+   .. py:attribute:: seq_number
+      :value: 0
+
+
+
+   .. py:attribute:: ack_number
+      :value: 0
+
+
+
+   .. py:method:: get_src_ip()
+
+
+   .. py:method:: get_dst_ip()
+
+
+   .. py:method:: get_src_port()
+
+
+   .. py:method:: get_dst_port()
+
+
+   .. py:method:: get_protocol()
+
+
+   .. py:method:: has_flagFIN()
+
+
+   .. py:method:: has_flagPSH()
+
+
+   .. py:method:: has_flagURG()
+
+
+   .. py:method:: has_flagECE()
+
+
+   .. py:method:: has_flagSYN()
+
+
+   .. py:method:: has_flagACK()
+
+
+   .. py:method:: has_flagCWR()
+
+
+   .. py:method:: has_flagRST()
+
+
+   .. py:method:: get_seq_number() -> int
+
+
+   .. py:method:: get_ack_number() -> int
+
+
+   .. py:method:: is_forward()
+
+
+   .. py:method:: get_timestamp()
+
+
+   .. py:method:: get_length()
+
+
+   .. py:method:: get_payloadbytes()
+
+
+   .. py:method:: get_header_size()
+
+
+   .. py:method:: get_window_size()
+
+
+   .. py:method:: get_segment_size()
+
+

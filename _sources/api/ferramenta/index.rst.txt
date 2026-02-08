@@ -1,0 +1,717 @@
+ferramenta
+==========
+
+.. py:module:: ferramenta
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ferramenta.CAPTURES_DIR
+   ferramenta.FEATURES_DIR
+   ferramenta.DATASETS_DIR
+   ferramenta.TMP_DIR
+   ferramenta.LOGS_DIR
+   ferramenta.BENIGN_CLIENTS_LOG
+   ferramenta.ATTACKS_LOG_PATH
+   ferramenta.ATTACKS_LOG
+   ferramenta.RANDOM_CLIENT_NAME_RE
+   ferramenta.RANDOM_CLIENT_IMAGE
+   ferramenta.RANDOM_CLIENT_NAME_PREFIX
+   ferramenta.RANDOM_CLIENT_MAX_RUNNING
+   ferramenta.SUPER_CLIENT_NAME_RE
+   ferramenta.SUPER_CLIENT_FIXED_NAMES
+   ferramenta.SUPER_CLIENT_IMAGE
+   ferramenta.SUPER_CLIENT_NAME_PREFIX
+   ferramenta.SUPER_CLIENT_MAX_RUNNING
+   ferramenta.SERVER_SPECS
+   ferramenta.BENIGN_CLIENT_SERVER_ORDER
+   ferramenta.SERVER_LOG_SPECS
+   ferramenta.rows
+   ferramenta.ip_map
+   ferramenta.running_random
+   ferramenta.running_super
+   ferramenta.servers_ok
+   ferramenta.category_names
+   ferramenta.tabs
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   ferramenta.start_attack_logs_watcher
+   ferramenta.start_attack_timeout_watchdog
+   ferramenta.build_dataset_path_for_capture
+   ferramenta.stem_no_ext
+   ferramenta.build_feature_paths
+   ferramenta.build_capture_path
+   ferramenta.tool_exists
+   ferramenta.tail_text_file
+   ferramenta.start_benign_logs_watcher
+   ferramenta.snapshot_benign_container_logs
+   ferramenta.list_running_benign_clients
+   ferramenta.next_benign_client_number
+   ferramenta.remove_all_benign_clients
+   ferramenta.start_one_benign_client
+   ferramenta.list_running_super_clients
+   ferramenta.purge_stale_benign_containers
+   ferramenta.next_super_client_number
+   ferramenta.remove_all_super_clients
+   ferramenta.start_one_super_client
+   ferramenta.normalize_mitre
+   ferramenta.mitre_label_from_url
+   ferramenta.render_mitre_links
+   ferramenta.normalize_tools
+   ferramenta.render_tools_links
+   ferramenta.get_running_container_id_by_ancestor
+   ferramenta.get_container_ip_by_id
+   ferramenta.get_required_server_ips
+   ferramenta.fetch_server_logs
+   ferramenta.render_server_logs_view
+   ferramenta.render_attacks_logs_view
+   ferramenta.render_benign_clients_view
+   ferramenta.list_capture_files
+   ferramenta.format_bytes
+   ferramenta.render_captures_view
+   ferramenta.render_features_view
+   ferramenta.render_view_dataset_view
+   ferramenta.render_view_features_view
+   ferramenta.get_host_ip
+   ferramenta.get_servers_status
+   ferramenta.start_tcpdump_capture
+   ferramenta.stop_tcpdump_capture
+   ferramenta.run_attack_from_spec
+   ferramenta.show_last_attack_result
+   ferramenta.stop_attack
+   ferramenta.show_attack_runtime
+   ferramenta.validate_ip
+   ferramenta.validate_port
+   ferramenta.validate_cidr
+   ferramenta.validate_fqdn
+   ferramenta.validate_ip_or_fqdn
+   ferramenta.resolve_placeholder
+   ferramenta.render_params_form
+   ferramenta.validate_params
+   ferramenta.category_tab_ui
+
+
+Module Contents
+---------------
+
+.. py:data:: CAPTURES_DIR
+
+.. py:data:: FEATURES_DIR
+
+.. py:data:: DATASETS_DIR
+
+.. py:data:: TMP_DIR
+
+.. py:data:: LOGS_DIR
+
+.. py:data:: BENIGN_CLIENTS_LOG
+
+.. py:data:: ATTACKS_LOG_PATH
+
+.. py:data:: ATTACKS_LOG
+
+.. py:function:: start_attack_logs_watcher(container_ref: str, spec: modules.registry.AttackSpec, *, cmd: Optional[List[str]] = None, pcap_path: Optional[str] = None, max_runtime_s: Optional[int] = None, capture_enabled: bool = False) -> None
+
+   "Acompanhador" do logs para gravação
+
+   :param container_ref: Container ID
+   :type container_ref: str
+   :param spec: Especificação do container
+   :type spec: AttackSpec
+   :param cmd: Descrição, padrão é None
+   :type cmd: Optional[List[str]], optional
+   :param pcap_path: Caminho de armazenamento do pcap, padrão é None
+   :type pcap_path: Optional[str], optional
+   :param max_runtime_s: Máximo de tempo de execução em segundos, padrão é None
+   :type max_runtime_s: Optional[int], optional
+   :param capture_enabled: Se a captura está habilitada ou não, padrão é None
+   :type capture_enabled: bool, optional
+
+
+.. py:function:: start_attack_timeout_watchdog(container_ref: str, spec: modules.registry.AttackSpec, max_runtime_s: int) -> None
+
+   Após `max_runtime_s`, se o container ainda estiver em execução, encerra com `docker rm -f`.
+
+
+.. py:function:: build_dataset_path_for_capture(pcap_path: pathlib.Path) -> pathlib.Path
+
+   Linka capturas a futuras gerações de dataset (mesma linha)
+
+   :param pcap_path: Caminho do arquivop .pcap
+   :type pcap_path: Path
+   :return: Caminho completo do arquivo de dataset
+   :rtype: Path
+
+
+.. py:function:: stem_no_ext(p: pathlib.Path) -> str
+
+   Exemplo recon_arp_scan-20260124_161958 (sem .pcap)
+
+   :param p: Arquivo .pcap sem extensão
+   :type p: Path
+   :return: Caminho completo do arquivo .pcap sem extensão
+   :rtype: str
+
+
+.. py:function:: build_feature_paths(pcap_path: pathlib.Path) -> Dict[str, pathlib.Path]
+
+   Linka capturas a futuras extraçõpes de features (mesma linha)
+
+   :param pcap_path: Caminho completo do arquivo pcap para relacionar com futura extração
+   :type pcap_path: Path
+   :return: Dicionário de caminhos para as ferramentas de extração
+   :rtype: Dict[str, Path]
+
+
+.. py:function:: build_capture_path(attack_id: str) -> pathlib.Path
+
+   Padroniza saída de capturas
+
+   :param attack_id: ID do ataque vindo do arquivo de registry
+   :type attack_id: str
+   :return: Caminho completo do arquivo de pcap para salvamento
+   :rtype: Path
+
+
+.. py:function:: tool_exists(exe: str) -> bool
+
+   Testa se ferramentas existem quando são chamadas para evitar quebrar a execução
+
+   :param exe: Nome do binário para teste
+   :type exe: str
+   :return: Retorna true ou false para a existência da ferramenta
+   :rtype: bool
+
+
+.. py:function:: tail_text_file(path: pathlib.Path, n_lines: int = 400, max_bytes: int = 256 * 1024) -> str
+
+   Lê as últimas N linhas (aprox) de um arquivo texto, limitando bytes.
+
+   :param path: Caminho do arquivo de log
+   :type path: Path
+   :param n_lines: Número de linhas para exibir, padrão é 400
+   :type n_lines: int, optional
+   :param max_bytes: Máximo de byes para exibir, padrão é 256*1024
+   :type max_bytes: int, optional
+   :return: String dos logs para exibir
+   :rtype: str
+
+
+.. py:function:: start_benign_logs_watcher(container_ref: str, kind: str, *, container_name: Optional[str] = None, cmd: Optional[List[str]] = None) -> None
+
+   Segue `docker logs -f --timestamps` e grava em logs/benign_clients.log.
+   Ao finalizar (ou se já tiver finalizado), tenta registrar exit_code e remover o container.
+
+   :param container_ref: Container ID
+   :type container_ref: str
+   :param kind: Tipo de parâmetro
+   :type kind: str
+   :param container_name: Nome do container, padrão é None
+   :type container_name: Optional[str], optional
+   :param cmd: Comando de execução, padrão é None
+   :type cmd: Optional[List[str]], optional
+
+
+.. py:function:: snapshot_benign_container_logs(names: List[str], kind: str) -> None
+
+   Captura logs atuais (não-follow) antes de remover containers.
+
+   :param names: Lista de parâmetros
+   :type names: List[str]
+   :param kind: Tipo de parâmetro
+   :type kind: str
+
+
+.. py:data:: RANDOM_CLIENT_NAME_RE
+
+.. py:data:: RANDOM_CLIENT_IMAGE
+   :value: 'sbrc26-clientes-aleatorio:latest'
+
+
+.. py:data:: RANDOM_CLIENT_NAME_PREFIX
+   :value: 'sbrc26-cliente-aleatorio-'
+
+
+.. py:data:: RANDOM_CLIENT_MAX_RUNNING
+   :value: 10
+
+
+.. py:data:: SUPER_CLIENT_NAME_RE
+
+.. py:data:: SUPER_CLIENT_FIXED_NAMES
+
+.. py:data:: SUPER_CLIENT_IMAGE
+   :value: 'sbrc26-clientes-super:latest'
+
+
+.. py:data:: SUPER_CLIENT_NAME_PREFIX
+   :value: 'sbrc26-cliente-super-'
+
+
+.. py:data:: SUPER_CLIENT_MAX_RUNNING
+   :value: 10
+
+
+.. py:function:: list_running_benign_clients() -> List[Tuple[str, int]]
+
+   Retorna lista [(container_name, n)] apenas de containers RUNNING cujo nome
+   casa com sbrc26-cliente-x.
+
+   :return: Lista de containers de clientes benignos que estão rodando
+   :rtype: List[Tuple[str, int]]
+
+
+.. py:function:: next_benign_client_number(running_clients: List[Tuple[str, int]]) -> int
+
+   Próximo número = (maior número em execução) + 1.
+   Se não houver nenhum, começa em 1.
+
+   :param running_clients: Lista de containers de clientes benignos que estão rodando
+   :type running_clients: List[Tuple[str, int]]
+   :return: Retorna número do próximo cliente benigno
+   :rtype: int
+
+
+.. py:function:: remove_all_benign_clients(running_clients: List[Tuple[str, int]]) -> dict
+
+   docker rm -f em todos os containers em execução que batem com o prefixo.
+   :param running_clients: Lista de containers de clientes benignos que estão rodando
+   :type running_clients: List[Tuple[str, int]]
+   :return: Status da execução
+   :rtype: dict
+
+
+.. py:function:: start_one_benign_client(running_clients: List[Tuple[str, int]]) -> dict
+
+   Spawna um cliente benigno por clique do botão, até 10
+   docker run -d --rm --name sbrc26-cliente-Y sbrc26-clientes:latest "<HOST_IP>"
+   habilitar apenas se count < 10 e se todos os 7 servidores estiverem rodando.
+
+   :param running_clients: Lista de containers de clientes benignos que estão rodando
+   :type running_clients: List[Tuple[str, int]]
+   :return: Discionário de parâmetros dos containers de clientes benignos que estão rodando
+   :rtype: dict
+
+
+.. py:function:: list_running_super_clients() -> List[Tuple[str, int]]
+
+   Retorna lista [(container_name, n)] apenas de containers RUNNING que sejam
+   clientes benignos SUPER (parametrizáveis).
+   Aceita nomes numerados (sbrc26-cliente-super-<n> ou sem hífen) e nomes fixos
+   (sbrc26-clientes-super / sbrc26-cliente-super).
+
+   :return: Lista de containers de clientes benignos super que estão rodando
+   :rtype: List[Tuple[str, int]]
+
+
+.. py:function:: purge_stale_benign_containers() -> Dict[str, Any]
+
+   Remove containers benignos que não estejam rodando (Exited/Created/Dead/etc).
+   Evita conflito de nome quando o app reinicia e sobram containers antigos.
+
+   :return: Retorna dicionário de clientes em status que não seja running para remoção
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: next_super_client_number(running_clients: List[Tuple[str, int]]) -> int
+
+   Próximo número = (maior número em execução) + 1.
+   Se não houver nenhum numerado, começa em 1.
+
+   :param running_clients: Lista de containers super em execução
+   :type running_clients: List[Tuple[str, int]]
+   :return: Retorna número do próximo cliente super
+   :rtype: int
+
+
+.. py:function:: remove_all_super_clients(running_clients: List[Tuple[str, int]]) -> dict
+
+   docker rm -f em todos os containers super em execução.
+
+   :param running_clients: Lista de containers super em execução
+   :type running_clients: List[Tuple[str, int]]
+   :return: Status da execução
+   :rtype: dict
+
+
+.. py:function:: start_one_super_client(service: str, target_ip: str, target_port: int, max_accesses: int, interval_s: int, max_total_s: int, running_clients: Optional[List[Tuple[str, int]]] = None) -> dict
+
+   Spawna um cliente benigno SUPER (parametrizável), em modo detached + --rm.
+
+   Exemplo:
+     docker run -d --rm --name sbrc26-cliente-super-1 sbrc26-clientes-super:latest web 172.17.0.2 443 10 1 15
+
+   :return: Dicionário com status e comando executado
+   :rtype: dict
+
+
+.. py:data:: SERVER_SPECS
+   :value: [('Web Server', 'sbrc26-servidor-http-server'), ('SSH Server', 'sbrc26-servidor-ssh-server'),...
+
+
+.. py:data:: BENIGN_CLIENT_SERVER_ORDER
+   :value: [('WEB', 'sbrc26-servidor-http-server'), ('SSH', 'sbrc26-servidor-ssh-server'), ('SMB',...
+
+
+.. py:data:: SERVER_LOG_SPECS
+   :type:  Dict[str, Dict[str, Any]]
+
+.. py:function:: normalize_mitre(mitre: Optional[Union[str, List[str]]]) -> List[str]
+
+   Normalização dos links de referência do MITRE ATT&CK
+
+   :param mitre: Descrição da técnica
+   :type mitre: Optional[Union[str, List[str]]]
+   :return: Lista de técnicas
+   :rtype: List[str]
+
+
+.. py:function:: mitre_label_from_url(url: str) -> str
+
+   Extrai label após 'techniques/' ou 'tactics/'.
+   Ex.:
+     .../techniques/T1595/003/ -> T1595/003
+     .../techniques/T1018/     -> T1018
+     .../tactics/TA0007/       -> TA0007
+
+
+.. py:function:: render_mitre_links(mitre: Optional[Union[str, List[str]]]) -> None
+
+   Retorna lista de URLs
+
+   :param mitre: Lista de URLs
+   :type mitre: Optional[Union[str, List[str]]]
+
+
+.. py:function:: normalize_tools(tools: Optional[List[Dict[str, str]]]) -> List[Dict[str, str]]
+
+   Aceita dois formatos:
+   [{"name": "Python", "url": "https://..."}]
+   [{"Python": "https://..."}, {"Streamlit": "https://..."}]
+   Normaliza para lista de {"name":..., "url":...}
+
+   :param tools: Retorna nome da ferramenta e URL
+   :type tools: Optional[List[Dict[str, str]]]
+   :return: Informações em formato esperado pelo render
+   :rtype: List[Dict[str, str]]
+
+
+.. py:function:: render_tools_links(tools: Optional[List[Dict[str, str]]]) -> None
+
+   Renderiza nomes das ferramentas registradas nas especificações
+
+   :param tools: Lista de dicionários Nome : URL
+   :type tools: Optional[List[Dict[str, str]]]
+
+
+.. py:function:: get_running_container_id_by_ancestor(image_base: str) -> Optional[str]
+
+   Retorna container_id de um container RUNNING cujo ancestor seja image_base ou image_base:latest.
+
+   :param image_base: Nome da imagem
+   :type image_base: str
+   :return: IDs dos containers retornados
+   :rtype: Optional[str]
+
+
+.. py:function:: get_container_ip_by_id(cid: str) -> Optional[str]
+
+   IP do container (bridge). Se tiver múltiplas networks, pega o primeiro IP encontrado.
+
+   :param cid: ID do container
+   :type cid: str
+   :return: Entereço IP como string
+   :rtype: Optional[str]
+
+
+.. py:function:: get_required_server_ips() -> Tuple[Optional[List[str]], List[str]]
+
+   Retorna (ips_em_ordem, missing_labels).
+   missing_labels contém os "WEB/SSH/..." que não estão rodando ou sem IP.
+
+   :return: Retorna IPs dos servidores
+   :rtype: Tuple[Optional[List[str]], List[str]]
+
+
+.. py:function:: fetch_server_logs(image_base: str, tail_lines: int = 200, prefer_alt: bool = False) -> Dict[str, Any]
+
+   Consulta de logs de um servidor
+
+   :param image_base: Nome da Imagem
+   :type image_base: str
+   :param tail_lines: Número de linhas de logs para retornas, padrão é 200
+   :type tail_lines: int, optional
+   :param prefer_alt: Método alternativo, para casos de logs binários, padrão é False
+   :type prefer_alt: bool, optional
+   :return: Saída padrão do retorno dos logs para exibição
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: render_server_logs_view() -> None
+
+   Funções streamlit para montar o módulo de visualização de logs
+
+
+.. py:function:: render_attacks_logs_view() -> None
+
+   Renderização da tela de visualização dos logs dos ataques
+
+
+.. py:function:: render_benign_clients_view() -> None
+
+   Renderização da tela de controle dos clientes benignos
+
+
+.. py:function:: list_capture_files() -> List[pathlib.Path]
+
+   Lista de arquivos .pcap no diretório /captures
+
+   :return: Lista de arquivo em formato path em ordem ascendente
+   :rtype: List[Path]
+
+
+.. py:function:: format_bytes(n: int) -> str
+
+   Função auxiliar para exibir na tela o tamanho do arquivo de captura
+
+   :param n: Retorno em bytes
+   :type n: int
+   :return: Conversão adequada human-readable
+   :rtype: str
+
+
+.. py:function:: render_captures_view() -> None
+
+   Funções streamlit para montar o módulo de visualização das capturas
+
+
+.. py:function:: render_features_view() -> None
+
+   Funções streamlit para montar o módulo de seleção da visualização de features extraídas
+
+
+.. py:function:: render_view_dataset_view() -> None
+
+   Funções streamlit para montar o módulo de visualização dos datasets
+
+
+.. py:function:: render_view_features_view() -> None
+
+   Funções streamlit para montar o módulo de visualização de features extraídas
+
+
+.. py:function:: get_host_ip() -> str
+
+   Retorna o IP real do host
+
+   :return: Retorna endereço IP como string
+   :rtype: str
+
+
+.. py:function:: get_servers_status() -> List[dict]
+
+   Retorna o status dos servidores
+
+   :return: Lista de status dos servidores
+   :rtype: List[dict]
+
+
+.. py:function:: start_tcpdump_capture(pcap_path: pathlib.Path, iface: str = 'docker0') -> Dict[str, Any]
+
+   Função para iniciar captura de tráfego
+
+   :param pcap_path: Caminho para o salvar o arquivo .pcap
+   :type pcap_path: Path
+   :param iface: Interface, fixado na "docker0" para fins da viabilidade do experimento
+   :type iface: str, optional
+   :return: Dicionário do caminho do arquivo e interface
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: stop_tcpdump_capture(p: subprocess.Popen, timeout: float = 3.0) -> Dict[str, Any]
+
+   Função para interromper a captura
+
+   :param p: ID do subprocesso iniciado
+   :type p: subprocess.Popen
+   :param timeout: timeout, padrão é 3 segundos
+   :type timeout: float, optional
+   :return: Dicionário com o ID do subprocesso e timeout
+   :rtype: Dict[str, Any]
+
+
+.. py:data:: rows
+
+.. py:data:: ip_map
+
+.. py:data:: running_random
+   :value: []
+
+
+.. py:data:: running_super
+   :value: []
+
+
+.. py:data:: servers_ok
+
+.. py:function:: run_attack_from_spec(spec: modules.registry.AttackSpec, resolved_params: Dict[str, Any], capture_enabled: bool = True, max_runtime_s: int = 15) -> Dict[str, Any]
+
+   Função de execução dos ataques (controle de containers)
+
+   - Inicia o container do ataque (docker run -d --rm ...)
+   - (Opcional) Inicia captura tcpdump em docker0 e encerra automaticamente quando o container terminar
+   - Encerra o container após `max_runtime_s` se ainda estiver em execução (watchdog)
+   - Registra logs em logs/attacks.log (best-effort)
+
+   :param spec: Difinição dos parâmetros do ataque vindos do registry
+   :type spec: AttackSpec
+   :param resolved_params: Lista de parâmetros para a execução
+   :type resolved_params: Dict[str, Any]
+   :param capture_enabled: Booleano para ativar automaticamente ou não a captura junto, padrão é True
+   :type capture_enabled: bool, optional
+   :param max_runtime_s: Tempo máximo (s) para encerrar o container caso ainda esteja rodando
+   :type max_runtime_s: int
+   :return: Dicionário de parâmetros
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: show_last_attack_result(spec: modules.registry.AttackSpec) -> None
+
+   Estado da sessão de execução
+
+   :param spec: Retorno do estado da última execução da especificação
+   :type spec: AttackSpec
+
+
+.. py:function:: stop_attack(spec: modules.registry.AttackSpec) -> None
+
+   Controle manual de parada do ataque
+
+   :param spec: Retorno da especificação para parar o ataque
+   :type spec: AttackSpec
+
+
+.. py:function:: show_attack_runtime(spec: modules.registry.AttackSpec) -> None
+
+   Exibição do ataque em curso
+
+   :param spec: Retorno da especificação do ataque
+   :type spec: AttackSpec
+
+
+.. py:function:: validate_ip(value: str) -> bool
+
+   Função para validação de IP
+
+   :param value: Endereço em string
+   :type value: str
+   :return: Se é ou não um IP válido
+   :rtype: bool
+
+
+.. py:function:: validate_port(value: int) -> bool
+
+   Validação de porta
+
+   :param value: Porta em inteiro
+   :type value: int
+   :return: Se é ou não uma porta válida
+   :rtype: bool
+
+
+.. py:function:: validate_cidr(value: str) -> bool
+
+   Validação de rede
+
+   :param value: Rede em string
+   :type value: str
+   :return: Se é ou não uma rede válida
+   :rtype: bool
+
+
+.. py:function:: validate_fqdn(value: str, *, allow_single_label: bool = False) -> bool
+
+   Valida hostname/FQDN.
+   - allow_single_label=False: exige pelo menos um ponto e TLD (ex.: example.com)
+   - allow_single_label=True: permite hostnames sem ponto (ex.: "router", "localhost")
+
+   :param value: Valor para teste
+   :type value: str
+   :param allow_single_label: Booleano para permitir nomes simples, padrão é False
+   :type allow_single_label: bool, optional
+   :return: True ou False se é válido ou não
+   :rtype: bool
+
+
+.. py:function:: validate_ip_or_fqdn(value: str, *, allow_single_label: bool = False) -> bool
+
+   Valida input do usuário para ver se é um IP ou FQDN válido
+
+   :param value: Input do alvo
+   :type value: str
+   :param allow_single_label: Booleano para permitir nomes simples, padrão é False
+   :type allow_single_label: bool, optional
+   :return: True ou False se é válido ou não
+   :rtype: bool
+
+
+.. py:function:: resolve_placeholder(p: modules.registry.ParamSpec, host_ip: str) -> str
+
+   Definição de placeholders (sugestões de preenchimento) com base nas especificações do registry
+
+   :param p: Tipo de parâmetro
+   :type p: ParamSpec
+   :param host_ip: IP sugerido
+   :type host_ip: str
+   :return: Placeholder do IP sugerido
+   :rtype: str
+
+
+.. py:function:: render_params_form(spec: modules.registry.AttackSpec, host_ip: str) -> Tuple[bool, Dict[str, Any], bool, int]
+
+   Rederização do formulários de parâmetros de um ataque selecionado
+
+   Retorna (submitted, resolved_params, capture_enabled, max_runtime_s).
+
+   :param spec: Tipo de parâmetro
+   :type spec: AttackSpec
+   :param host_ip: IP sugerido
+   :type host_ip: str
+   :return: Para cada tipo de ataque, um tipo de sugestão de parâmetros para preenchimento
+   :rtype: Tuple[bool, Dict[str, Any], bool, int]
+
+
+.. py:function:: validate_params(spec: modules.registry.AttackSpec, params: Dict[str, Any]) -> List[str]
+
+   Validação dos parâmetros inseridos
+
+   :param spec: Tipo de parâmetro
+   :type spec: AttackSpec
+   :param params: Dicionário de "valores possíveis"
+   :type params: Dict[str, Any]
+   :return: Lista validada
+   :rtype: List[str]
+
+
+.. py:function:: category_tab_ui(category_name: str, attacks: List[modules.registry.AttackSpec]) -> None
+
+   Renderizador das tabs das categorias de ataques
+
+   :param category_name: Caterogias especificadas no registry
+   :type category_name: str
+   :param attacks: Parâmetros específicos do ataque selecionado numa aba
+   :type attacks: List[AttackSpec]
+
+
+.. py:data:: category_names
+
+.. py:data:: tabs
+

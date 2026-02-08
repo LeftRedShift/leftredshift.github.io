@@ -1,0 +1,103 @@
+modules.features
+================
+
+.. py:module:: modules.features
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   modules.features.FEATURES_DIR
+   modules.features.TMP_DIR
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   modules.features.stem_no_ext
+   modules.features.tool_exists
+   modules.features.build_feature_paths
+   modules.features.extract_with_ntlflowlyzer
+   modules.features.extract_with_tshark
+   modules.features.extract_with_scapy
+
+
+Module Contents
+---------------
+
+.. py:data:: FEATURES_DIR
+
+.. py:data:: TMP_DIR
+
+.. py:function:: stem_no_ext(p: pathlib.Path) -> str
+
+   Camiho do arquivo de captura em string
+
+   :param p: Camiho do arquivo de captura como path
+   :type p: Path
+   :return: Camiho do arquivo de captura em string
+   :rtype: str
+
+
+.. py:function:: tool_exists(exe: str) -> bool
+
+   Verifica se a ferramenta que será usada existe
+
+   :param exe: Ferramenta para testar
+   :type exe: str
+   :return: Retorna true ou false
+   :rtype: bool
+
+
+.. py:function:: build_feature_paths(pcap_path: pathlib.Path, features_dir: pathlib.Path = FEATURES_DIR) -> Dict[str, pathlib.Path]
+
+   Define caminhos completos de saída da extração de features
+
+   :param pcap_path: Caminho do arquivo de captura
+   :type pcap_path: Path
+   :param features_dir: Caminho do diretório de features, padrão é features/
+   :type features_dir: Path, optional
+   :return: Caminho do arquivo de saída, por ferramenta
+   :rtype: Dict[str, Path]
+
+
+.. py:function:: extract_with_ntlflowlyzer(pcap_path: pathlib.Path, out_csv: pathlib.Path) -> Dict[str, Any]
+
+   Extração com o NTLFlowLyzer
+
+   :param pcap_path: Caminho do arquivo de captura
+   :type pcap_path: Path
+   :param out_csv: Caminho do arquivo de saída csv
+   :type out_csv: Path
+   :return: Caminho do arquivo de saída, por ferramenta
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: extract_with_tshark(pcap_path: pathlib.Path, out_csv: pathlib.Path) -> Dict[str, Any]
+
+   Extração com o TShark
+
+   :param pcap_path: Caminho do arquivo de captura
+   :type pcap_path: Path
+   :param out_csv: Caminho do arquivo de saída csv
+   :type out_csv: Path
+   :return: Caminho do arquivo de saída, por ferramenta
+   :rtype: Dict[str, Any]
+
+
+.. py:function:: extract_with_scapy(pcap_path: pathlib.Path, out_csv: pathlib.Path) -> Dict[str, Any]
+
+   Extração com o Scapy
+
+   :param pcap_path: Caminho do arquivo de captura
+   :type pcap_path: Path
+   :param out_csv: Caminho do arquivo de saída csv
+   :type out_csv: Path
+   :return: Caminho do arquivo de saída, por ferramenta
+   :rtype: Dict[str, Any]
+
+

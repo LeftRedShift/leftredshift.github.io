@@ -1,0 +1,31 @@
+coap-client
+===========
+
+.. py:module:: coap-client
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   coap-client.svar_string
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   coap-client.main
+
+
+Module Contents
+---------------
+
+.. py:function:: main(var)
+   :async:
+
+
+.. py:data:: svar_string
+

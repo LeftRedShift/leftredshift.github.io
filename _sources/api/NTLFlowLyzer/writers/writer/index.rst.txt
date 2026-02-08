@@ -1,0 +1,29 @@
+NTLFlowLyzer.writers.writer
+===========================
+
+.. py:module:: NTLFlowLyzer.writers.writer
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   NTLFlowLyzer.writers.writer.Writer
+
+
+Module Contents
+---------------
+
+.. py:class:: Writer(strategy: NTLFlowLyzer.writers.strategy.Strategy = None)
+
+   Bases: :py:obj:`object`
+
+
+   .. py:attribute:: strategy
+      :type:  NTLFlowLyzer.writers.strategy.Strategy
+
+
+   .. py:method:: write(file_address: str, data: list, writing_mode: str = 'w', only_headers: bool = False) -> None
+
+
