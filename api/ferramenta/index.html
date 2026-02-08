@@ -1,253 +1,43 @@
-<!doctype html>
-<html class="no-js" lang="en" data-content_root="../../">
-  <head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="ferramenta_cli" href="../ferramenta_cli/index.html"><link rel="prev" title="modules.runners" href="../modules/runners/index.html">
+<!DOCTYPE html>
 
-    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>ferramenta - Project name not set documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ferramenta &#8212; Project name not set  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
-    
-    
-
-
-<style>
-  body {
-    --color-code-background: #f2f2f2;
-  --color-code-foreground: #1e1e1e;
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ferramenta_cli" href="../ferramenta_cli/index.html" />
+    <link rel="prev" title="modules.runners" href="../modules/runners/index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+
   
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
   
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
-    <title>Auto light/dark, in light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
-      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
-      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
-      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
-      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
-      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
-      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
-      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
-      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
-      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
-      <circle cx="14.5" cy="9.55" r="3.6"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
-    <title>Auto light/dark, in dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
-      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
-      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
-      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
-      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
-      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
-      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
-      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
-      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
-      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
-      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-pencil" viewBox="0 0 24 24">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
-      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
-      <path d="M13.5 6.5l4 4" />
-      <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
-    </svg>
-  </symbol>
-  <symbol id="svg-eye" viewBox="0 0 24 24">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-      <path
-        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
-      <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
-
-<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="../../index.html"><div class="brand">Project name not set  documentation</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
-          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  </head><body>
   
-  <span class="sidebar-brand-text">Project name not set  documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../modules/index.html">modules</a><input aria-label="Toggle navigation of modules" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../modules/datasets/index.html">modules.datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/features/index.html">modules.features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/registry/index.html">modules.registry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/runners/index.html">modules.runners</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">ferramenta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ferramenta_cli/index.html">ferramenta_cli</a></li>
-</ul>
-</li>
-</ul>
 
-</div>
-</div>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
 
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          <div class="view-this-page">
-  <a class="muted-link" href="../../_sources/api/ferramenta/index.rst.txt" title="View this page">
-    <svg><use href="#svg-eye"></use></svg>
-    <span class="visually-hidden">View this page</span>
-  </a>
-</div>
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
-              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
-          </label>
-        </div>
-        <article role="main" id="furo-main-content">
-          <section id="module-ferramenta">
+          <div class="body" role="main">
+            
+  <section id="module-ferramenta">
 <span id="ferramenta"></span><h1>ferramenta<a class="headerlink" href="#module-ferramenta" title="Link to this heading">¶</a></h1>
 <section id="attributes">
 <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
-<div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.CAPTURES_DIR" title="ferramenta.CAPTURES_DIR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAPTURES_DIR</span></code></a></p></td>
@@ -333,178 +123,175 @@
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
-<div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.start_attack_logs_watcher" title="ferramenta.start_attack_logs_watcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_attack_logs_watcher</span></code></a>(→ None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.start_attack_logs_watcher" title="ferramenta.start_attack_logs_watcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_attack_logs_watcher</span></code></a>(→ None)</p></td>
 <td><p>&quot;Acompanhador&quot; do logs para gravação</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.start_attack_timeout_watchdog" title="ferramenta.start_attack_timeout_watchdog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_attack_timeout_watchdog</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.start_attack_timeout_watchdog" title="ferramenta.start_attack_timeout_watchdog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_attack_timeout_watchdog</span></code></a>(→ None)</p></td>
 <td><p>Após <cite>max_runtime_s</cite>, se o container ainda estiver em execução, encerra com <cite>docker rm -f</cite>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.build_dataset_path_for_capture" title="ferramenta.build_dataset_path_for_capture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_dataset_path_for_capture</span></code></a>(→ pathlib.Path)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.build_dataset_path_for_capture" title="ferramenta.build_dataset_path_for_capture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_dataset_path_for_capture</span></code></a>(→ pathlib.Path)</p></td>
 <td><p>Linka capturas a futuras gerações de dataset (mesma linha)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.stem_no_ext" title="ferramenta.stem_no_ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stem_no_ext</span></code></a>(→ str)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.stem_no_ext" title="ferramenta.stem_no_ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stem_no_ext</span></code></a>(→ str)</p></td>
 <td><p>Exemplo recon_arp_scan-20260124_161958 (sem .pcap)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.build_feature_paths" title="ferramenta.build_feature_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_feature_paths</span></code></a>(→ Dict[str, pathlib.Path])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.build_feature_paths" title="ferramenta.build_feature_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_feature_paths</span></code></a>(→ Dict[str, pathlib.Path])</p></td>
 <td><p>Linka capturas a futuras extraçõpes de features (mesma linha)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.build_capture_path" title="ferramenta.build_capture_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_capture_path</span></code></a>(→ pathlib.Path)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.build_capture_path" title="ferramenta.build_capture_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_capture_path</span></code></a>(→ pathlib.Path)</p></td>
 <td><p>Padroniza saída de capturas</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.tool_exists" title="ferramenta.tool_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tool_exists</span></code></a>(→ bool)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.tool_exists" title="ferramenta.tool_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tool_exists</span></code></a>(→ bool)</p></td>
 <td><p>Testa se ferramentas existem quando são chamadas para evitar quebrar a execução</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.tail_text_file" title="ferramenta.tail_text_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail_text_file</span></code></a>(→ str)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.tail_text_file" title="ferramenta.tail_text_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail_text_file</span></code></a>(→ str)</p></td>
 <td><p>Lê as últimas N linhas (aprox) de um arquivo texto, limitando bytes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.start_benign_logs_watcher" title="ferramenta.start_benign_logs_watcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_benign_logs_watcher</span></code></a>(→ None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.start_benign_logs_watcher" title="ferramenta.start_benign_logs_watcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_benign_logs_watcher</span></code></a>(→ None)</p></td>
 <td><p>Segue <cite>docker logs -f --timestamps</cite> e grava em logs/benign_clients.log.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.snapshot_benign_container_logs" title="ferramenta.snapshot_benign_container_logs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">snapshot_benign_container_logs</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.snapshot_benign_container_logs" title="ferramenta.snapshot_benign_container_logs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">snapshot_benign_container_logs</span></code></a>(→ None)</p></td>
 <td><p>Captura logs atuais (não-follow) antes de remover containers.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.list_running_benign_clients" title="ferramenta.list_running_benign_clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_running_benign_clients</span></code></a>(→ List[Tuple[str, int]])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.list_running_benign_clients" title="ferramenta.list_running_benign_clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_running_benign_clients</span></code></a>(→ List[Tuple[str, int]])</p></td>
 <td><p>Retorna lista [(container_name, n)] apenas de containers RUNNING cujo nome</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.next_benign_client_number" title="ferramenta.next_benign_client_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">next_benign_client_number</span></code></a>(→ int)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.next_benign_client_number" title="ferramenta.next_benign_client_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">next_benign_client_number</span></code></a>(→ int)</p></td>
 <td><p>Próximo número = (maior número em execução) + 1.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.remove_all_benign_clients" title="ferramenta.remove_all_benign_clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_all_benign_clients</span></code></a>(→ dict)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.remove_all_benign_clients" title="ferramenta.remove_all_benign_clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_all_benign_clients</span></code></a>(→ dict)</p></td>
 <td><p>docker rm -f em todos os containers em execução que batem com o prefixo.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.start_one_benign_client" title="ferramenta.start_one_benign_client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_one_benign_client</span></code></a>(→ dict)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.start_one_benign_client" title="ferramenta.start_one_benign_client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_one_benign_client</span></code></a>(→ dict)</p></td>
 <td><p>Spawna um cliente benigno por clique do botão, até 10</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.list_running_super_clients" title="ferramenta.list_running_super_clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_running_super_clients</span></code></a>(→ List[Tuple[str, int]])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.list_running_super_clients" title="ferramenta.list_running_super_clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_running_super_clients</span></code></a>(→ List[Tuple[str, int]])</p></td>
 <td><p>Retorna lista [(container_name, n)] apenas de containers RUNNING que sejam</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.purge_stale_benign_containers" title="ferramenta.purge_stale_benign_containers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">purge_stale_benign_containers</span></code></a>(→ Dict[str, Any])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.purge_stale_benign_containers" title="ferramenta.purge_stale_benign_containers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">purge_stale_benign_containers</span></code></a>(→ Dict[str, Any])</p></td>
 <td><p>Remove containers benignos que não estejam rodando (Exited/Created/Dead/etc).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.next_super_client_number" title="ferramenta.next_super_client_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">next_super_client_number</span></code></a>(→ int)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.next_super_client_number" title="ferramenta.next_super_client_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">next_super_client_number</span></code></a>(→ int)</p></td>
 <td><p>Próximo número = (maior número em execução) + 1.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.remove_all_super_clients" title="ferramenta.remove_all_super_clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_all_super_clients</span></code></a>(→ dict)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.remove_all_super_clients" title="ferramenta.remove_all_super_clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_all_super_clients</span></code></a>(→ dict)</p></td>
 <td><p>docker rm -f em todos os containers super em execução.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.start_one_super_client" title="ferramenta.start_one_super_client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_one_super_client</span></code></a>(→ dict)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.start_one_super_client" title="ferramenta.start_one_super_client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_one_super_client</span></code></a>(→ dict)</p></td>
 <td><p>Spawna um cliente benigno SUPER (parametrizável), em modo detached + --rm.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.normalize_mitre" title="ferramenta.normalize_mitre"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_mitre</span></code></a>(→ List[str])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.normalize_mitre" title="ferramenta.normalize_mitre"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_mitre</span></code></a>(→ List[str])</p></td>
 <td><p>Normalização dos links de referência do MITRE ATT&amp;CK</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.mitre_label_from_url" title="ferramenta.mitre_label_from_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mitre_label_from_url</span></code></a>(→ str)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.mitre_label_from_url" title="ferramenta.mitre_label_from_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mitre_label_from_url</span></code></a>(→ str)</p></td>
 <td><p>Extrai label após 'techniques/' ou 'tactics/'.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_mitre_links" title="ferramenta.render_mitre_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_mitre_links</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_mitre_links" title="ferramenta.render_mitre_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_mitre_links</span></code></a>(→ None)</p></td>
 <td><p>Retorna lista de URLs</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.normalize_tools" title="ferramenta.normalize_tools"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_tools</span></code></a>(→ List[Dict[str, str]])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.normalize_tools" title="ferramenta.normalize_tools"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_tools</span></code></a>(→ List[Dict[str, str]])</p></td>
 <td><p>Aceita dois formatos:</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_tools_links" title="ferramenta.render_tools_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_tools_links</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_tools_links" title="ferramenta.render_tools_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_tools_links</span></code></a>(→ None)</p></td>
 <td><p>Renderiza nomes das ferramentas registradas nas especificações</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.get_running_container_id_by_ancestor" title="ferramenta.get_running_container_id_by_ancestor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_running_container_id_by_ancestor</span></code></a>(→ Optional[str])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.get_running_container_id_by_ancestor" title="ferramenta.get_running_container_id_by_ancestor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_running_container_id_by_ancestor</span></code></a>(→ Optional[str])</p></td>
 <td><p>Retorna container_id de um container RUNNING cujo ancestor seja image_base ou image_base:latest.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.get_container_ip_by_id" title="ferramenta.get_container_ip_by_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_container_ip_by_id</span></code></a>(→ Optional[str])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.get_container_ip_by_id" title="ferramenta.get_container_ip_by_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_container_ip_by_id</span></code></a>(→ Optional[str])</p></td>
 <td><p>IP do container (bridge). Se tiver múltiplas networks, pega o primeiro IP encontrado.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.get_required_server_ips" title="ferramenta.get_required_server_ips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_required_server_ips</span></code></a>(→ Tuple[Optional[List[str]], ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.get_required_server_ips" title="ferramenta.get_required_server_ips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_required_server_ips</span></code></a>(→ Tuple[Optional[List[str]], ...)</p></td>
 <td><p>Retorna (ips_em_ordem, missing_labels).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.fetch_server_logs" title="ferramenta.fetch_server_logs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_server_logs</span></code></a>(→ Dict[str, Any])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.fetch_server_logs" title="ferramenta.fetch_server_logs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_server_logs</span></code></a>(→ Dict[str, Any])</p></td>
 <td><p>Consulta de logs de um servidor</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.render_server_logs_view" title="ferramenta.render_server_logs_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_server_logs_view</span></code></a>(→ None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.render_server_logs_view" title="ferramenta.render_server_logs_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_server_logs_view</span></code></a>(→ None)</p></td>
 <td><p>Funções streamlit para montar o módulo de visualização de logs</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_attacks_logs_view" title="ferramenta.render_attacks_logs_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_attacks_logs_view</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_attacks_logs_view" title="ferramenta.render_attacks_logs_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_attacks_logs_view</span></code></a>(→ None)</p></td>
 <td><p>Renderização da tela de visualização dos logs dos ataques</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.render_benign_clients_view" title="ferramenta.render_benign_clients_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_benign_clients_view</span></code></a>(→ None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.render_benign_clients_view" title="ferramenta.render_benign_clients_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_benign_clients_view</span></code></a>(→ None)</p></td>
 <td><p>Renderização da tela de controle dos clientes benignos</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.list_capture_files" title="ferramenta.list_capture_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_capture_files</span></code></a>(→ List[pathlib.Path])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.list_capture_files" title="ferramenta.list_capture_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_capture_files</span></code></a>(→ List[pathlib.Path])</p></td>
 <td><p>Lista de arquivos .pcap no diretório /captures</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.format_bytes" title="ferramenta.format_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_bytes</span></code></a>(→ str)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.format_bytes" title="ferramenta.format_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_bytes</span></code></a>(→ str)</p></td>
 <td><p>Função auxiliar para exibir na tela o tamanho do arquivo de captura</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_captures_view" title="ferramenta.render_captures_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_captures_view</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_captures_view" title="ferramenta.render_captures_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_captures_view</span></code></a>(→ None)</p></td>
 <td><p>Funções streamlit para montar o módulo de visualização das capturas</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.render_features_view" title="ferramenta.render_features_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_features_view</span></code></a>(→ None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.render_features_view" title="ferramenta.render_features_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_features_view</span></code></a>(→ None)</p></td>
 <td><p>Funções streamlit para montar o módulo de seleção da visualização de features extraídas</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_view_dataset_view" title="ferramenta.render_view_dataset_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_view_dataset_view</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_view_dataset_view" title="ferramenta.render_view_dataset_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_view_dataset_view</span></code></a>(→ None)</p></td>
 <td><p>Funções streamlit para montar o módulo de visualização dos datasets</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.render_view_features_view" title="ferramenta.render_view_features_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_view_features_view</span></code></a>(→ None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.render_view_features_view" title="ferramenta.render_view_features_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_view_features_view</span></code></a>(→ None)</p></td>
 <td><p>Funções streamlit para montar o módulo de visualização de features extraídas</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.get_host_ip" title="ferramenta.get_host_ip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_host_ip</span></code></a>(→ str)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.get_host_ip" title="ferramenta.get_host_ip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_host_ip</span></code></a>(→ str)</p></td>
 <td><p>Retorna o IP real do host</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.get_servers_status" title="ferramenta.get_servers_status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_servers_status</span></code></a>(→ List[dict])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.get_servers_status" title="ferramenta.get_servers_status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_servers_status</span></code></a>(→ List[dict])</p></td>
 <td><p>Retorna o status dos servidores</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.start_tcpdump_capture" title="ferramenta.start_tcpdump_capture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_tcpdump_capture</span></code></a>(→ Dict[str, Any])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.start_tcpdump_capture" title="ferramenta.start_tcpdump_capture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_tcpdump_capture</span></code></a>(→ Dict[str, Any])</p></td>
 <td><p>Função para iniciar captura de tráfego</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.stop_tcpdump_capture" title="ferramenta.stop_tcpdump_capture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stop_tcpdump_capture</span></code></a>(→ Dict[str, Any])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.stop_tcpdump_capture" title="ferramenta.stop_tcpdump_capture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stop_tcpdump_capture</span></code></a>(→ Dict[str, Any])</p></td>
 <td><p>Função para interromper a captura</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.run_attack_from_spec" title="ferramenta.run_attack_from_spec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_attack_from_spec</span></code></a>(→ Dict[str, Any])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.run_attack_from_spec" title="ferramenta.run_attack_from_spec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_attack_from_spec</span></code></a>(→ Dict[str, Any])</p></td>
 <td><p>Função de execução dos ataques (controle de containers)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.show_last_attack_result" title="ferramenta.show_last_attack_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_last_attack_result</span></code></a>(→ None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.show_last_attack_result" title="ferramenta.show_last_attack_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_last_attack_result</span></code></a>(→ None)</p></td>
 <td><p>Estado da sessão de execução</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.stop_attack" title="ferramenta.stop_attack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stop_attack</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.stop_attack" title="ferramenta.stop_attack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stop_attack</span></code></a>(→ None)</p></td>
 <td><p>Controle manual de parada do ataque</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.show_attack_runtime" title="ferramenta.show_attack_runtime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_attack_runtime</span></code></a>(→ None)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.show_attack_runtime" title="ferramenta.show_attack_runtime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_attack_runtime</span></code></a>(→ None)</p></td>
 <td><p>Exibição do ataque em curso</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.validate_ip" title="ferramenta.validate_ip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_ip</span></code></a>(→ bool)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.validate_ip" title="ferramenta.validate_ip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_ip</span></code></a>(→ bool)</p></td>
 <td><p>Função para validação de IP</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.validate_port" title="ferramenta.validate_port"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_port</span></code></a>(→ bool)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.validate_port" title="ferramenta.validate_port"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_port</span></code></a>(→ bool)</p></td>
 <td><p>Validação de porta</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.validate_cidr" title="ferramenta.validate_cidr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_cidr</span></code></a>(→ bool)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.validate_cidr" title="ferramenta.validate_cidr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_cidr</span></code></a>(→ bool)</p></td>
 <td><p>Validação de rede</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.validate_fqdn" title="ferramenta.validate_fqdn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_fqdn</span></code></a>(→ bool)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.validate_fqdn" title="ferramenta.validate_fqdn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_fqdn</span></code></a>(→ bool)</p></td>
 <td><p>Valida hostname/FQDN.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.validate_ip_or_fqdn" title="ferramenta.validate_ip_or_fqdn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_ip_or_fqdn</span></code></a>(→ bool)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.validate_ip_or_fqdn" title="ferramenta.validate_ip_or_fqdn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_ip_or_fqdn</span></code></a>(→ bool)</p></td>
 <td><p>Valida input do usuário para ver se é um IP ou FQDN válido</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.resolve_placeholder" title="ferramenta.resolve_placeholder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_placeholder</span></code></a>(→ str)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.resolve_placeholder" title="ferramenta.resolve_placeholder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_placeholder</span></code></a>(→ str)</p></td>
 <td><p>Definição de placeholders (sugestões de preenchimento) com base nas especificações do registry</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_params_form" title="ferramenta.render_params_form"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_params_form</span></code></a>(→ Tuple[bool, Dict[str, Any], bool, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.render_params_form" title="ferramenta.render_params_form"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_params_form</span></code></a>(→ Tuple[bool, Dict[str, Any], bool, ...)</p></td>
 <td><p>Rederização do formulários de parâmetros de um ataque selecionado</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.validate_params" title="ferramenta.validate_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_params</span></code></a>(→ List[str])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ferramenta.validate_params" title="ferramenta.validate_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_params</span></code></a>(→ List[str])</p></td>
 <td><p>Validação dos parâmetros inseridos</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.category_tab_ui" title="ferramenta.category_tab_ui"><code class="xref py py-obj docutils literal notranslate"><span class="pre">category_tab_ui</span></code></a>(→ None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ferramenta.category_tab_ui" title="ferramenta.category_tab_ui"><code class="xref py py-obj docutils literal notranslate"><span class="pre">category_tab_ui</span></code></a>(→ None)</p></td>
 <td><p>Renderizador das tabs das categorias de ataques</p></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
@@ -1465,162 +1252,79 @@ missing_labels contém os “WEB/SSH/…” que não estão rodando ou sem IP.</
 </section>
 </section>
 
-        </article>
+
+          </div>
+          
+        </div>
       </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="../ferramenta_cli/index.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">ferramenta_cli</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../modules/runners/index.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">modules.runners</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Project name not set</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
     </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">ferramenta</a><ul>
-<li><a class="reference internal" href="#attributes">Attributes</a></li>
-<li><a class="reference internal" href="#functions">Functions</a></li>
-<li><a class="reference internal" href="#module-contents">Module Contents</a><ul>
-<li><a class="reference internal" href="#ferramenta.CAPTURES_DIR"><code class="docutils literal notranslate"><span class="pre">CAPTURES_DIR</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.FEATURES_DIR"><code class="docutils literal notranslate"><span class="pre">FEATURES_DIR</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.DATASETS_DIR"><code class="docutils literal notranslate"><span class="pre">DATASETS_DIR</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.TMP_DIR"><code class="docutils literal notranslate"><span class="pre">TMP_DIR</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.LOGS_DIR"><code class="docutils literal notranslate"><span class="pre">LOGS_DIR</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.BENIGN_CLIENTS_LOG"><code class="docutils literal notranslate"><span class="pre">BENIGN_CLIENTS_LOG</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.ATTACKS_LOG_PATH"><code class="docutils literal notranslate"><span class="pre">ATTACKS_LOG_PATH</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.ATTACKS_LOG"><code class="docutils literal notranslate"><span class="pre">ATTACKS_LOG</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.start_attack_logs_watcher"><code class="docutils literal notranslate"><span class="pre">start_attack_logs_watcher()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.start_attack_timeout_watchdog"><code class="docutils literal notranslate"><span class="pre">start_attack_timeout_watchdog()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.build_dataset_path_for_capture"><code class="docutils literal notranslate"><span class="pre">build_dataset_path_for_capture()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.stem_no_ext"><code class="docutils literal notranslate"><span class="pre">stem_no_ext()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.build_feature_paths"><code class="docutils literal notranslate"><span class="pre">build_feature_paths()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.build_capture_path"><code class="docutils literal notranslate"><span class="pre">build_capture_path()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.tool_exists"><code class="docutils literal notranslate"><span class="pre">tool_exists()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.tail_text_file"><code class="docutils literal notranslate"><span class="pre">tail_text_file()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.start_benign_logs_watcher"><code class="docutils literal notranslate"><span class="pre">start_benign_logs_watcher()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.snapshot_benign_container_logs"><code class="docutils literal notranslate"><span class="pre">snapshot_benign_container_logs()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.RANDOM_CLIENT_NAME_RE"><code class="docutils literal notranslate"><span class="pre">RANDOM_CLIENT_NAME_RE</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.RANDOM_CLIENT_IMAGE"><code class="docutils literal notranslate"><span class="pre">RANDOM_CLIENT_IMAGE</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.RANDOM_CLIENT_NAME_PREFIX"><code class="docutils literal notranslate"><span class="pre">RANDOM_CLIENT_NAME_PREFIX</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.RANDOM_CLIENT_MAX_RUNNING"><code class="docutils literal notranslate"><span class="pre">RANDOM_CLIENT_MAX_RUNNING</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.SUPER_CLIENT_NAME_RE"><code class="docutils literal notranslate"><span class="pre">SUPER_CLIENT_NAME_RE</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.SUPER_CLIENT_FIXED_NAMES"><code class="docutils literal notranslate"><span class="pre">SUPER_CLIENT_FIXED_NAMES</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.SUPER_CLIENT_IMAGE"><code class="docutils literal notranslate"><span class="pre">SUPER_CLIENT_IMAGE</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.SUPER_CLIENT_NAME_PREFIX"><code class="docutils literal notranslate"><span class="pre">SUPER_CLIENT_NAME_PREFIX</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.SUPER_CLIENT_MAX_RUNNING"><code class="docutils literal notranslate"><span class="pre">SUPER_CLIENT_MAX_RUNNING</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.list_running_benign_clients"><code class="docutils literal notranslate"><span class="pre">list_running_benign_clients()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.next_benign_client_number"><code class="docutils literal notranslate"><span class="pre">next_benign_client_number()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.remove_all_benign_clients"><code class="docutils literal notranslate"><span class="pre">remove_all_benign_clients()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.start_one_benign_client"><code class="docutils literal notranslate"><span class="pre">start_one_benign_client()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.list_running_super_clients"><code class="docutils literal notranslate"><span class="pre">list_running_super_clients()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.purge_stale_benign_containers"><code class="docutils literal notranslate"><span class="pre">purge_stale_benign_containers()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.next_super_client_number"><code class="docutils literal notranslate"><span class="pre">next_super_client_number()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.remove_all_super_clients"><code class="docutils literal notranslate"><span class="pre">remove_all_super_clients()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.start_one_super_client"><code class="docutils literal notranslate"><span class="pre">start_one_super_client()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.SERVER_SPECS"><code class="docutils literal notranslate"><span class="pre">SERVER_SPECS</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.BENIGN_CLIENT_SERVER_ORDER"><code class="docutils literal notranslate"><span class="pre">BENIGN_CLIENT_SERVER_ORDER</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.SERVER_LOG_SPECS"><code class="docutils literal notranslate"><span class="pre">SERVER_LOG_SPECS</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.normalize_mitre"><code class="docutils literal notranslate"><span class="pre">normalize_mitre()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.mitre_label_from_url"><code class="docutils literal notranslate"><span class="pre">mitre_label_from_url()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_mitre_links"><code class="docutils literal notranslate"><span class="pre">render_mitre_links()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.normalize_tools"><code class="docutils literal notranslate"><span class="pre">normalize_tools()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_tools_links"><code class="docutils literal notranslate"><span class="pre">render_tools_links()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.get_running_container_id_by_ancestor"><code class="docutils literal notranslate"><span class="pre">get_running_container_id_by_ancestor()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.get_container_ip_by_id"><code class="docutils literal notranslate"><span class="pre">get_container_ip_by_id()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.get_required_server_ips"><code class="docutils literal notranslate"><span class="pre">get_required_server_ips()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.fetch_server_logs"><code class="docutils literal notranslate"><span class="pre">fetch_server_logs()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_server_logs_view"><code class="docutils literal notranslate"><span class="pre">render_server_logs_view()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_attacks_logs_view"><code class="docutils literal notranslate"><span class="pre">render_attacks_logs_view()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_benign_clients_view"><code class="docutils literal notranslate"><span class="pre">render_benign_clients_view()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.list_capture_files"><code class="docutils literal notranslate"><span class="pre">list_capture_files()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.format_bytes"><code class="docutils literal notranslate"><span class="pre">format_bytes()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_captures_view"><code class="docutils literal notranslate"><span class="pre">render_captures_view()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_features_view"><code class="docutils literal notranslate"><span class="pre">render_features_view()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_view_dataset_view"><code class="docutils literal notranslate"><span class="pre">render_view_dataset_view()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_view_features_view"><code class="docutils literal notranslate"><span class="pre">render_view_features_view()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.get_host_ip"><code class="docutils literal notranslate"><span class="pre">get_host_ip()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.get_servers_status"><code class="docutils literal notranslate"><span class="pre">get_servers_status()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.start_tcpdump_capture"><code class="docutils literal notranslate"><span class="pre">start_tcpdump_capture()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.stop_tcpdump_capture"><code class="docutils literal notranslate"><span class="pre">stop_tcpdump_capture()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.rows"><code class="docutils literal notranslate"><span class="pre">rows</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.ip_map"><code class="docutils literal notranslate"><span class="pre">ip_map</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.running_random"><code class="docutils literal notranslate"><span class="pre">running_random</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.running_super"><code class="docutils literal notranslate"><span class="pre">running_super</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.servers_ok"><code class="docutils literal notranslate"><span class="pre">servers_ok</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.run_attack_from_spec"><code class="docutils literal notranslate"><span class="pre">run_attack_from_spec()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.show_last_attack_result"><code class="docutils literal notranslate"><span class="pre">show_last_attack_result()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.stop_attack"><code class="docutils literal notranslate"><span class="pre">stop_attack()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.show_attack_runtime"><code class="docutils literal notranslate"><span class="pre">show_attack_runtime()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.validate_ip"><code class="docutils literal notranslate"><span class="pre">validate_ip()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.validate_port"><code class="docutils literal notranslate"><span class="pre">validate_port()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.validate_cidr"><code class="docutils literal notranslate"><span class="pre">validate_cidr()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.validate_fqdn"><code class="docutils literal notranslate"><span class="pre">validate_fqdn()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.validate_ip_or_fqdn"><code class="docutils literal notranslate"><span class="pre">validate_ip_or_fqdn()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.resolve_placeholder"><code class="docutils literal notranslate"><span class="pre">resolve_placeholder()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.render_params_form"><code class="docutils literal notranslate"><span class="pre">render_params_form()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.validate_params"><code class="docutils literal notranslate"><span class="pre">validate_params()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.category_tab_ui"><code class="docutils literal notranslate"><span class="pre">category_tab_ui()</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.category_names"><code class="docutils literal notranslate"><span class="pre">category_names</span></code></a></li>
-<li><a class="reference internal" href="#ferramenta.tabs"><code class="docutils literal notranslate"><span class="pre">tabs</span></code></a></li>
-</ul>
-</li>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../modules/index.html">modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ferramenta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ferramenta_cli/index.html">ferramenta_cli</a></li>
 </ul>
 </li>
 </ul>
 
-          </div>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">API Reference</a><ul>
+      <li>Previous: <a href="../modules/runners/index.html" title="previous chapter">modules.runners</a></li>
+      <li>Next: <a href="../ferramenta_cli/index.html" title="next chapter">ferramenta_cli</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
         </div>
       </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;.
       
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
-    </aside>
-  </div>
-</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
-    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
-    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
-    </body>
+      |
+      <a href="../../_sources/api/ferramenta/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
 </html>
